@@ -215,13 +215,33 @@ honest, options-forward update protects you most.
 
 ---
 
+## 9. /copilot-bridge — the unlimited planning brain 🪟 (work Windows host)
+
+**Fire when:** every session with work Copilot (GPT). Its whole point: stop pasting
+thousands of raw lines; feed it a generated context pack instead.
+
+**The craft:**
+- Once: bootstrap `.agent/PROJECT-BRIEF.md` with Copilot's help (paste the repo tree,
+  co-write one page). Once: confirm with IT that your Copilot is the enterprise variant
+  before pasting source.
+- Per session: `./context-pack.sh <relevant files>` in the VM terminal (free) → fresh
+  Copilot chat → session-opener prompt → check its 3-sentence understanding → work.
+- The payoff move is prompt #5 (handoff): let GPT draft the one-shot prompt Windsurf
+  will execute. Strong model plans, weak model types, you verify. Credits buy typing only.
+- Never continue yesterday's chat. The pack is the memory; the chat is disposable.
+
+**Common mistake:** trusting it about your codebase beyond what the pack shows. It's
+stronger, not psychic — the one-hop verification rule still applies.
+
 ## Situation → skill cheat sheet
 
 | Situation | Run | Where |
 |---|---|---|
 | Danny assigned something | /brief | 🏢 |
 | "I don't know what this concept/service even is" | /tutor · /domain-tutor | 🏢 · 🏠 |
-| About to spend credits | /token-sniper prep | 🏠 → 🏢 |
+| About to spend credits | /token-sniper prep (or Copilot handoff prompt #5) | 🪟/🏠 → 🏢 |
+| Starting a Copilot session | context-pack.sh + session opener | 🪟 |
+| Need a plan / design options / diff review | copilot-bridge prompts #2/#4 | 🪟 |
 | AI just generated code | /log (row) | 🏢 |
 | About to commit/push | /verify | 🏢 |
 | Lost / spinning / avoiding | /stuck | 🏢 + 🏠 |

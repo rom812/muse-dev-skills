@@ -46,19 +46,24 @@ up front replaces two days of flailing.
  └──────────────────────────────────────────────┘
 ```
 
-## The two-environment split
+## The three-environment split
 
-You have two AI environments with opposite constraints. Use each for what it's good at:
+You have three AI environments with different constraints. Use each for what it's good at:
 
-| | **Claude Code at home** | **Windsurf at work** |
-|---|---|---|
-| Budget | effectively unlimited | ~1000 credits/month — precious |
-| Model strength | strong reasoning | older/weaker models |
-| Has your code | ❌ never paste it | ✅ full repo context |
-| Use for | learning domain concepts abstractly, planning approaches, drafting briefs/prompts, Spring AI questions, career strategy | code generation **with prepared prompts**, repo-specific edits, wiki/Bitbucket MCP lookups |
+| | **Copilot GPT (work Windows host)** | **Windsurf (work Linux VM)** | **Claude Code at home** |
+|---|---|---|---|
+| Budget | unlimited | ~1000 credits/month — precious | effectively unlimited |
+| Model strength | strong | older/weaker models | strong reasoning |
+| Has your code | ❌ chat-only — feed it **context packs** (see copilot-bridge) | ✅ full repo context | ❌ never paste work code |
+| Use for | planning, design options, explaining pasted code, diff review, distilling reports, **drafting the Windsurf prompts** | executing prepared prompts: generation and multi-file edits only; wiki/Bitbucket MCP lookups | domain concepts abstractly, skill/workflow maintenance, career strategy |
 
-The workflow is designed so the *expensive thinking* happens at home for free, and work credits
-are spent only on the final, well-specified generation step.
+The pipeline: Windsurf/terminal gathers (free) → `context-pack.sh` distills (free) →
+Copilot plans and drafts the prompt (free) → Windsurf executes it (the ONLY paid step)
+→ Copilot reviews the diff (free) → `/verify` gates the commit. Credits buy typing;
+everything else is free.
+
+> ⚠ One-time check: confirm your Copilot is the enterprise/work-account variant
+> (commercial data protection) before pasting company code into it.
 
 ## Weekly ritual (Friday, 20 minutes)
 

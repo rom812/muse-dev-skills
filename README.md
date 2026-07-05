@@ -30,7 +30,7 @@ The system attacks four problems at once:
 
 ```bash
 # all skills, globally
-cp -r feature-brief domain-tutor impl-log explain-before-merge spring-ai-mentor token-sniper standup-reporter ~/.claude/skills/
+./install.sh claude
 ```
 
 Then invoke with `/feature-brief`, `/domain-tutor`, etc.

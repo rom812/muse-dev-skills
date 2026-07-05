@@ -51,7 +51,10 @@ Copy the compact ports into the work repo (or your global workflows dir):
 ./install.sh windsurf-global
 ```
 
-Then invoke with `/brief`, `/tutor`, `/verify`, `/log`, `/standup` in Cascade.
+Then invoke with `/brief`, `/tutor`, `/verify`, `/log`, `/standup`, `/stuck` in Cascade.
+
+Prefer to have Cascade run the installation itself? Paste the ready-made prompt from
+[windsurf/cascade-install-prompt.md](windsurf/cascade-install-prompt.md).
 
 > Windsurf workflows are capped at 12,000 characters — the ports in `windsurf/` are
 > deliberately compact. The full-fat versions live in the skill folders.

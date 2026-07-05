@@ -41,6 +41,15 @@ Add a generation entry — 4 lines, 2 minutes, non-negotiable:
 - **Trust level:** `understood` / `mostly` / `⚠ magic` — anything `⚠ magic` MUST go through
   `/explain-before-merge` before commit
 
+### The decision record (filled during /explain-before-merge, Gate 5)
+
+The log's "Decision record" table (choice / alternatives considered / why this one) is
+NOT filled here — it's filled while walking the final diff in `/explain-before-merge`,
+one row per non-obvious choice. It exists in this file because the log is where you'll
+re-read it: it is your prepared answer to the reviewer's "why did you implement it
+like that?". A log with an empty decision table and status `[SHIPPED]` means the
+verify gate was skipped.
+
 ### On every fix cycle
 One line per fix: what broke, root cause, and **which earlier assumption was wrong**.
 The wrong-assumption column is the entire point — patterns in it show what to check

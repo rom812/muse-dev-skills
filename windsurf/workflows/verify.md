@@ -20,6 +20,9 @@ Rule: if I can't explain a line, I don't commit it. Run the gates in order.
    - @Transactional on the right layer; self-invocation proxy trap
    - resources: unclosed clients, missing timeouts (LLM calls especially)
    - hardcoded values that belong in application.yml
+   - Vaadin: components touched from async/AI threads must be inside ui.access() with
+     @Push enabled + ui.isAttached() guard; conversation state in @UIScope beans, never
+     singleton fields
 4. **Test plan executed.** Map the change to the brief's acceptance criteria; prove each
    with a unit test, integration test, or a manual check actually performed now. Run the
    build + existing tests; record results.

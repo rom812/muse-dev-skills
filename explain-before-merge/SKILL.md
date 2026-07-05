@@ -51,6 +51,10 @@ Check the classics AI code systematically omits:
 - **Resources:** unclosed streams/clients, unbounded collections, missing timeouts on
   external calls (LLM calls especially — they hang)
 - **Config:** hardcoded values that belong in `application.yml`
+- **Vaadin threading (this project's #1 trap):** any component touched from an async/AI
+  completion must be inside `ui.access(...)` with `@Push` enabled and a `ui.isAttached()`
+  guard; conversation state must live in `@UIScope`/session-scoped beans, never
+  singleton fields (see vaadin-mentor §2, §4, §7)
 
 ### Gate 4 — Test plan executed (not just written)
 

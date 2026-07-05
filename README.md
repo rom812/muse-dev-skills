@@ -40,12 +40,11 @@ Then invoke with `/feature-brief`, `/domain-tutor`, etc.
 Copy the compact ports into the work repo (or your global workflows dir):
 
 ```bash
-# per-project (inside the work repo)
-cp windsurf/workflows/*.md <work-repo>/.windsurf/workflows/
-cp windsurf/rules/*.md     <work-repo>/.windsurf/rules/
+# per-project (also adds .agent/ to the repo's local-only ignore)
+./install.sh windsurf <path-to-work-repo>
 
 # or global (all projects, survives repo switches)
-cp windsurf/workflows/*.md ~/.codeium/windsurf/global_workflows/
+./install.sh windsurf-global
 ```
 
 Then invoke with `/brief`, `/tutor`, `/verify`, `/log`, `/standup` in Cascade.

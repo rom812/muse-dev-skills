@@ -17,14 +17,23 @@ case "${1:-}" in
     ;;
   windsurf)
     repo="${2:?usage: ./install.sh windsurf <path-to-work-repo>}"
-    mkdir -p "$repo/.windsurf/workflows" "$repo/.windsurf/rules"
+    mkdir -p "$repo/.windsurf/workflows" "$repo/.windsurf/rules" "$repo/.agent/reference"
     cp windsurf/workflows/*.md "$repo/.windsurf/workflows/"
     cp windsurf/rules/*.md     "$repo/.windsurf/rules/"
+    # pattern references — readable by Cascade as workspace files (see ai-discipline rule)
+    cp spring-ai-mentor/references/spring-ai-patterns.md \
+       vaadin-mentor/references/vaadin-patterns.md \
+       token-sniper/references/weak-model-playbook.md \
+       copilot-bridge/assets/copilot-session-prompts.md \
+       "$repo/.agent/reference/"
+    cp copilot-bridge/scripts/context-pack.sh "$repo/.agent/"
+    chmod +x "$repo/.agent/context-pack.sh"
     if [ -d "$repo/.git" ] && ! grep -q '^\.agent/$' "$repo/.git/info/exclude" 2>/dev/null; then
       echo ".agent/" >> "$repo/.git/info/exclude"
       echo "Added .agent/ to $repo/.git/info/exclude (local-only ignore)."
     fi
-    echo "Installed workflows+rules into $repo/.windsurf/ — invoke with /brief, /verify, /log, /tutor, /standup."
+    echo "Installed workflows+rules into $repo/.windsurf/, references+context-pack.sh into $repo/.agent/."
+    echo "Invoke with /brief, /verify, /log, /tutor, /standup, /stuck."
     ;;
   windsurf-global)
     mkdir -p ~/.codeium/windsurf/global_workflows

@@ -44,6 +44,11 @@ Fill the one-shot template (`assets/prompt-templates.md`) BEFORE opening Cascade
 
 A weak model + this template beats a strong model + a vague sentence.
 
+> Working with the older work models specifically — and defending against being misled
+> by them — is covered in `references/weak-model-playbook.md`. Core ideas: weak models
+> imitate better than they reason (patterns > instructions), decompose ruthlessly,
+> fresh chat when confused, and verification rules for output you can't yet judge.
+
 ## Step 3 — Fire once, then verify
 
 Run the prompt. Then go straight to `/explain-before-merge` — verification is free,

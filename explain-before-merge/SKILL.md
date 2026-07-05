@@ -58,6 +58,25 @@ Check the classics AI code systematically omits:
   unit test, integration test, or a described manual check *actually performed*.
 - Run the build + existing tests. Paste results into the impl-log's "Verified by".
 
+### Gate 5 — Review defense (the "why did you implement it like that?" rehearsal)
+
+The reviewer WILL ask "why like this?" — and for AI-generated code the author often has
+no answer, which reads far worse than the code itself. Close that gap before pushing:
+
+1. **Build the decision record.** For every non-obvious choice in the diff, fill the
+   impl-log's decision table: choice / alternatives considered / why this one. If the
+   AI made the choice, ask it (or the AI at home, abstractly) "what were the
+   alternatives to this approach and why is this one right here?" — then *verify the
+   answer makes sense* and rewrite it in your own words. An unverifiable rationale
+   means the choice needs re-examining, not memorizing.
+2. **Rehearse the top 3.** Predict the three lines the reviewer is most likely to
+   question (the weirdest-looking ones). Say the answer out loud once.
+3. **Prepare the honest fallback.** For anything you still can't defend, the script is:
+   *"I followed the pattern from `<precedent>`; let me double-check that specific
+   choice and get back to you today."* — then actually follow up the same day.
+   One honest deferral builds more trust than ten bluffs; a bluff that unravels
+   destroys it. NEVER answer "the AI did it that way."
+
 ### Output — PR description
 
 Generate ready-to-paste PR text:

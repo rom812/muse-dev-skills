@@ -23,7 +23,14 @@ Rule: if I can't explain a line, I don't commit it. Run the gates in order.
 4. **Test plan executed.** Map the change to the brief's acceptance criteria; prove each
    with a unit test, integration test, or a manual check actually performed now. Run the
    build + existing tests; record results.
-5. **Output PR description** ready to paste:
+5. **Review defense.** For each non-obvious choice in the diff, add a row to the
+   impl-log decision table: choice / alternatives / why this one. If the AI chose,
+   ask it for alternatives + rationale, verify the rationale against the code, and
+   make me restate it in my own words. Predict the 3 lines the reviewer will question
+   and rehearse answers. For anything undefendable, my fallback script is: "I followed
+   the pattern from <precedent>; let me double-check that choice and get back to you
+   today" — never bluff, never say "the AI did it".
+6. **Output PR description** ready to paste:
    What (1-2 sentences) / Why (from brief) / How (3 bullets incl. which precedent it
    follows) / How I tested (checked boxes, concrete) / Notes for reviewer (the one spot
    deserving extra eyes, stated honestly).

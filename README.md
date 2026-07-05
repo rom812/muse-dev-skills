@@ -21,6 +21,7 @@ The system attacks four problems at once:
 | **[spring-ai-mentor](spring-ai-mentor/)** | Reference knowledge for Spring AI (tool calling, advisors, ChatClient, memory) — compensates for older models that don't know the framework. | When touching Spring AI code |
 | **[token-sniper](token-sniper/)** | Prompt-under-budget discipline: prepare offline, one-shot, never enter "fix it" loops. | Every time you're about to spend work AI credits |
 | **[standup-reporter](standup-reporter/)** | Turn your logs into crisp updates for your boss: done / in progress / blockers-with-options. | Daily + Friday |
+| **[stuck-protocol](stuck-protocol/)** | Escalation ladder for being stuck: timeboxed attempts with a documented trail → well-formed question with a best guess. Plus question-slot and parking-lot habits. | The moment you feel lost |
 
 **The master loop that ties them together: [WORKFLOW.md](WORKFLOW.md).** Read it first.
 

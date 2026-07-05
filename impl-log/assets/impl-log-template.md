@@ -6,6 +6,11 @@
 |---|---------------|-----|-------------|-------|
 | 1 | [what I asked] | [what it made] | [test/trace/manual] | understood / mostly / ⚠ magic |
 
+## Decision record (my answers for "why did you implement it like that?")
+| Choice made | Alternative(s) considered | Why this one |
+|-------------|--------------------------|--------------|
+| [e.g. used @Async job instead of sync call] | [sync in request thread] | [LLM call takes seconds; precedent in XJob.java] |
+
 ## Fix cycles
 | # | What broke | Root cause | Wrong assumption I made |
 |---|-----------|------------|------------------------|

@@ -1,13 +1,14 @@
 ---
 name: token-sniper
 description: 'Discipline for spending a tiny monthly AI-credit budget surgically: decide if a task deserves credits, prepare a one-shot prompt offline, and never enter blind fix-loops. Use before any paid AI generation at work or when drafting prompts for a weaker model.'
+allowed-tools: Read, Write, Edit, Grep, Glob
 ---
 
 # Token Sniper
 
-You get ~1000 credits a month at work, on older models. Every credit spent on a lazy
-prompt or a "still broken, fix it" loop is a credit not available when it matters.
-This skill turns each generation into a **prepared, single, well-aimed shot**.
+~1000 credits a month at work, on older models. Every credit spent on a lazy prompt or
+a "still broken, fix it" loop is a credit not available when it matters. This skill
+turns each generation into a **prepared, single, well-aimed shot**.
 
 ## When this triggers
 
@@ -16,59 +17,87 @@ This skill turns each generation into a **prepared, single, well-aimed shot**.
 - A previous generation failed and the user is tempted to reply "doesn't work, fix".
 - The user invokes `/token-sniper`.
 
-## Step 1 — Should this cost credits at all?
+## When this does not trigger
 
-| Task | Spend credits? |
-|---|---|
-| Find where something is / how it's called | ❌ grep / IDE navigation / Bitbucket search |
-| What does this domain term mean | ❌ wiki MCP / knowledge notes / ask at home |
-| How does a Java/Spring API work | ❌ docs / Claude at home (abstractly) |
-| Boilerplate identical to an existing precedent | ⚠ copy the precedent by hand first; AI only if genuinely faster |
-| New logic in existing patterns | ✅ one prepared prompt |
-| Gnarly multi-file change | ✅ but plan at home first, then one prepared prompt per step |
+- Understanding-phase work (what does X do, what does this term mean) — that's grep,
+  wiki, `domain-tutor`, or free Copilot/home sessions; credits never buy comprehension.
+- Planning with the unlimited chat model → `copilot-bridge` (which then hands off here).
+- Framework-pattern questions → `spring-ai-mentor` / `vaadin-mentor` (their references
+  feed this skill's prompts).
 
-Rule of thumb: **credits are for writing code, never for understanding.** Understanding
-comes from grep, docs, wiki, knowledge notes, and free Claude at home.
+## Required inputs
 
-## Step 2 — Prepare the shot (offline, costs nothing)
+- The goal, one sentence, from the brief's acceptance criteria.
+- The precedent file/pattern to imitate (or the mentor-reference pattern to paste).
+- Constraints: version anchors, files not to touch, conventions.
 
-Fill the one-shot template (`assets/prompt-templates.md`) BEFORE opening Cascade:
+## Workflow
 
-1. **Goal** — one sentence, from the brief's acceptance criteria.
-2. **Context** — name the exact files to read, and *the precedent*: "follow the pattern
-   of `ExistingSimilarTool.java`". Weak models with a concrete example to imitate perform
-   like strong models; weak models told to invent perform like dice.
-3. **Constraints** — version, conventions, what NOT to touch, error-handling expectations.
-4. **Expected output** — which files created/modified, and "explain any non-obvious line".
-5. **Verification** — "after generating, list what I should test to prove this works."
+### Step 1 — Should this cost credits at all?
+Find-where/how-it-works → grep/IDE/wiki (free) · domain terms → wiki/notes/home (free)
+· boilerplate with a precedent → copy it by hand first · new logic in existing
+patterns → ✅ one prepared shot · gnarly multi-file → plan first (Copilot/home), then
+one prepared shot per step.
 
-A weak model + this template beats a strong model + a vague sentence.
+### Step 2 — Prepare the shot offline (costs nothing)
+Fill a template from `assets/prompt-templates.md`: **Goal** (one sentence) · **Context**
+(exact files; *the precedent to imitate* — weak models with a concrete example perform
+like strong ones) · **Constraints** (version anchors, do-not-touch, error handling) ·
+**Expected output** (files + "explain non-obvious lines") · **Verification** ("list
+what I should test").
+Working with the older work models specifically — and defending against being misled
+by them — is `references/weak-model-playbook.md`: patterns > instructions, decompose
+ruthlessly, fresh chat when confused, verification rules for output you can't yet judge.
 
-> Working with the older work models specifically — and defending against being misled
-> by them — is covered in `references/weak-model-playbook.md`. Core ideas: weak models
-> imitate better than they reason (patterns > instructions), decompose ruthlessly,
-> fresh chat when confused, and verification rules for output you can't yet judge.
-
-## Step 3 — Fire once, then verify
-
-Run the prompt. Then go straight to `/explain-before-merge` — verification is free,
+### Step 3 — Fire once, then verify
+Run the prompt, then go straight to `explain-before-merge` — verification is free,
 generation is not.
 
-## Step 4 — If it's wrong: NO BLIND LOOPS
+### Step 4 — If it's wrong: NO BLIND LOOPS
+Never reply "doesn't work / fix it" — that buys another guess at full price. Gather the
+evidence free (exact error, log line), diagnose free (read it yourself / free strong
+model), then ONE new prepared prompt: "Fails with <exact error> at <location>; likely
+cause <diagnosis>; fix only <scope>."
 
-Never reply "doesn't work" / "fix it" — that buys another guess at full price. Instead:
+### Step 5 — Bookkeeping
+Note rough credits per generation in the impl-log's generation table. A month of data
+shows which task types deserve the budget.
 
-1. Gather the *evidence* for free: exact error, log line, wrong behavior observed.
-2. Diagnose for free where possible: read the failing code yourself, or take the error
-   to Claude at home (abstracted).
-3. If AI is still needed, send ONE new prepared prompt: "This fails with <exact error>
-   at <location>. The cause is likely <your diagnosis>. Fix only <scope>."
+## Decision gates
 
-Two failed prepared shots on the same problem = stop. The problem is under-understood,
-not under-generated → back to `/feature-brief` or `/domain-tutor`.
+- No paid generation without a filled template — the urge to "just type into Cascade"
+  is the trigger to run this skill, not to skip it.
+- Two failed prepared shots on the same problem = stop; the problem is
+  under-understood, not under-generated → back to `feature-brief` or `domain-tutor`.
+- Credits buy code, never comprehension.
 
-## Budget bookkeeping
+## Output format
 
-Note credits spent per task in the impl-log's generation table (rough count is fine).
-A month of data shows exactly which task types deserve the budget — and it proves the
-fix-loop cost drop over time.
+The deliverable is a ready-to-paste prompt (from a template, fully filled) plus the
+one-line spend/no-spend verdict for Step 1. No persistent artifact beyond the
+impl-log's credit notes.
+
+## Gotchas
+
+- A weak model + a filled template beats a strong model + a vague sentence.
+- Weak models drift into unrequested changes — always constrain scope explicitly.
+- Long confused chats waste money — restate cleanly in a fresh chat instead of arguing.
+- Don't paste giant raw context; paste the relevant mentor-reference pattern instead.
+
+## Evaluation checklist
+
+- [ ] Step-1 verdict given before any generation?
+- [ ] Template fully filled, with a named precedent or pasted reference pattern?
+- [ ] Version anchors and scope constraints included?
+- [ ] After failure: evidence gathered free and ONE surgical retry prepared (no blind loops)?
+- [ ] Credit cost noted in the impl-log?
+
+## References
+
+- `references/weak-model-playbook.md` — getting strong-model results from older models
+  + anti-mislead defenses (trust ladder, fluency ≠ correctness, loop trap).
+
+## Assets
+
+- `assets/prompt-templates.md` — the four one-shot templates (feature, bug fix,
+  plan-only, explain).

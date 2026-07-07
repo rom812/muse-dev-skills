@@ -1,0 +1,14 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-one-concept",
+  "skill": "domain-tutor",
+  "query": "what is a network topology link and why does deleting one fire an event?",
+  "files": [],
+  "expected_behavior": [
+    "Scopes to one concept (offers a split via interactive options if broad)",
+    "Explains in 5 layers ending with a mermaid diagram and one concrete trace",
+    "Runs the Feynman check and a 3-question quiz via the interactive UI",
+    "Saves .agent/knowledge/<concept>.md with the user's own words in key sentences"
+  ],
+  "should_NOT_trigger": false
+}

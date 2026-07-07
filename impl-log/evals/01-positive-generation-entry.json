@@ -1,0 +1,13 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-generation-entry",
+  "skill": "impl-log",
+  "query": "the AI just generated the LinkDownTrigger class for me, log it",
+  "files": [],
+  "expected_behavior": [
+    "Asks which event happened via interactive multi-choice (single message)",
+    "Adds a generation row with prompt gist, output, named verification evidence, trust level",
+    "Flags any '\u26a0 magic' trust level as requiring explain-before-merge before commit"
+  ],
+  "should_NOT_trigger": false
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-domain-gap",
+  "skill": "feature-brief",
+  "query": "I don't understand what the topology service even is, can you teach me?",
+  "files": [],
+  "expected_behavior": [
+    "Routes to domain-tutor instead \u2014 this is a knowledge gap, not a new task"
+  ],
+  "should_NOT_trigger": true
+}

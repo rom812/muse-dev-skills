@@ -1,0 +1,15 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-precommit",
+  "skill": "explain-before-merge",
+  "query": "I'm about to commit the AI-generated report feature, run the gate",
+  "files": [],
+  "expected_behavior": [
+    "Walks the diff hunk by hunk collecting Explained/Can't-explain/Wrong verdicts via interactive options",
+    "Traces one real scenario end-to-end naming actual methods",
+    "Checks Vaadin threading (ui.access/@Push) and LLM timeouts explicitly",
+    "Produces a PR description with an executed 'How I tested' section",
+    "Fills the impl-log decision table (Gate 5)"
+  ],
+  "should_NOT_trigger": false
+}

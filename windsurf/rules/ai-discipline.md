@@ -4,6 +4,13 @@ trigger: always_on
 
 # AI Discipline Rules
 
+- Whenever you need input from me, batch ALL questions into ONE message and present
+  them as suggested responses / interactive multi-choice options (always include an
+  "other" option). Never end a turn with an open free-text question when options are
+  possible — every extra turn costs me credits.
+- The Exa MCP is available: for non-trivial patterns, unfamiliar errors, or possibly-
+  outdated APIs, a quick Exa search for best practices / the exact error string is
+  encouraged BEFORE generating code — search is far cheaper than a wrong implementation.
 - Before implementing any non-trivial task, a feature brief must exist at
   `.agent/briefs/NNN-<task>.md` (run /brief). If none exists, create one first — do not
   jump to code.

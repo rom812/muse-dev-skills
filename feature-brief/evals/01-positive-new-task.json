@@ -1,0 +1,14 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-new-task",
+  "skill": "feature-brief",
+  "query": "Danny just sent me: 'we want the bot to also handle when a link goes down, same like the delete thing you did'",
+  "files": [],
+  "expected_behavior": [
+    "Captures the task verbatim before anything else",
+    "Asks the restatement questions via the interactive question UI (AskUserQuestion / suggested responses), batched in one message",
+    "Produces 2-4 boss questions with options + a leaning",
+    "Saves .agent/briefs/NNN-*.md and refuses to write implementation code before the Understanding Check passes"
+  ],
+  "should_NOT_trigger": false
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-home-session",
+  "skill": "copilot-bridge",
+  "query": "let's think about the avatar architecture here at home",
+  "files": [],
+  "expected_behavior": [
+    "No context pack \u2014 home sessions never receive work code; discuss abstractly"
+  ],
+  "should_NOT_trigger": true
+}

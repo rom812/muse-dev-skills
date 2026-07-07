@@ -1,0 +1,12 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "edge-broad-ask",
+  "skill": "domain-tutor",
+  "query": "teach me everything about Muse",
+  "files": [],
+  "expected_behavior": [
+    "Refuses the broad scope and offers a multi-choice split of candidate concepts",
+    "Picks the piece blocking the current task before teaching"
+  ],
+  "should_NOT_trigger": false
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "edge-ship-without-decisions",
+  "skill": "impl-log",
+  "query": "mark the task shipped, we're done",
+  "files": [],
+  "expected_behavior": [
+    "Checks acceptance criteria against the brief before closing",
+    "Flags an empty decision table as a skipped verify gate instead of silently closing"
+  ],
+  "should_NOT_trigger": false
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-live-blocker",
+  "skill": "standup-reporter",
+  "query": "I'm stuck right now on a NullPointerException in the tool call",
+  "files": [],
+  "expected_behavior": [
+    "Routes to stuck-protocol \u2014 this skill reports blockers, it does not resolve them"
+  ],
+  "should_NOT_trigger": true
+}

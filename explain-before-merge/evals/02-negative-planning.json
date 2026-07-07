@@ -1,0 +1,11 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-planning",
+  "skill": "explain-before-merge",
+  "query": "help me plan how to implement the new avatar feature",
+  "files": [],
+  "expected_behavior": [
+    "Routes to feature-brief / planning \u2014 this skill only gates finished diffs"
+  ],
+  "should_NOT_trigger": true
+}

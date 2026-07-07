@@ -1,0 +1,11 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-failed-generation",
+  "skill": "stuck-protocol",
+  "query": "Cascade's generated fix doesn't compile, what now?",
+  "files": [],
+  "expected_behavior": [
+    "Routes to token-sniper Step 4 \u2014 evidence then one surgical retry"
+  ],
+  "should_NOT_trigger": true
+}

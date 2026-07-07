@@ -1,0 +1,11 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-backend-question",
+  "skill": "vaadin-mentor",
+  "query": "my structured output JSON from the LLM doesn't parse into my record",
+  "files": [],
+  "expected_behavior": [
+    "Routes to spring-ai-mentor \u2014 .entity()/structured output is backend"
+  ],
+  "should_NOT_trigger": true
+}

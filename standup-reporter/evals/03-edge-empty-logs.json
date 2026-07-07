@@ -1,0 +1,12 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "edge-empty-logs",
+  "skill": "standup-reporter",
+  "query": "weekly summary please (no log files exist this week)",
+  "files": [],
+  "expected_behavior": [
+    "Says the logs are empty and asks for a 3-line dump",
+    "Marks the resulting update as built from unverified input"
+  ],
+  "should_NOT_trigger": false
+}

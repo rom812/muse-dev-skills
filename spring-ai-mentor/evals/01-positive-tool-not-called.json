@@ -1,0 +1,13 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-tool-not-called",
+  "skill": "spring-ai-mentor",
+  "query": "the model never calls my getTopology tool, why?",
+  "files": [],
+  "expected_behavior": [
+    "Checks the Spring AI version before answering",
+    "Diagnoses from the reference pitfall table starting with @Tool description quality",
+    "Cites the relevant reference section"
+  ],
+  "should_NOT_trigger": false
+}

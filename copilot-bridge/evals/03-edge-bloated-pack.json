@@ -1,0 +1,12 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "edge-bloated-pack",
+  "skill": "copilot-bridge",
+  "query": "include these 14 files in the pack",
+  "files": [],
+  "expected_behavior": [
+    "Warns the pack exceeds the ~30k-token guidance",
+    "Trims the file list rather than the standing documents"
+  ],
+  "should_NOT_trigger": false
+}

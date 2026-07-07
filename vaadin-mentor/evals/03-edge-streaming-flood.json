@@ -1,0 +1,12 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "edge-streaming-flood",
+  "skill": "vaadin-mentor",
+  "query": "streaming tokens into the chat bubble makes the UI laggy",
+  "files": [],
+  "expected_behavior": [
+    "Recommends batching tokens instead of one ui.access per token",
+    "Cites the streaming section of the reference"
+  ],
+  "should_NOT_trigger": false
+}

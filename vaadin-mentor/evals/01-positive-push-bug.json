@@ -1,0 +1,12 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-push-bug",
+  "skill": "vaadin-mentor",
+  "query": "users say the bot's answer shows up only when they click something",
+  "files": [],
+  "expected_behavior": [
+    "Diagnoses missing @Push / ui.access from the reference threading section first",
+    "Provides the capture-UI-before-async pattern with ui.isAttached guard"
+  ],
+  "should_NOT_trigger": false
+}

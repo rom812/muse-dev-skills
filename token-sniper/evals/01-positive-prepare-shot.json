@@ -1,0 +1,13 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-prepare-shot",
+  "skill": "token-sniper",
+  "query": "I need Cascade to generate the report-export feature, prepare the prompt",
+  "files": [],
+  "expected_behavior": [
+    "Gives the Step-1 spend/no-spend verdict first",
+    "Fills a template with goal, exact files, a named precedent to imitate, constraints, expected output",
+    "Instructs to run explain-before-merge after generation"
+  ],
+  "should_NOT_trigger": false
+}

@@ -5,6 +5,7 @@ description: Turn a new task into a one-page feature brief with smart questions 
 # /brief — Feature Brief (understand before coding)
 
 Hard rule: no implementation until this brief is filled.
+Ask me everything via suggested-responses multi-choice, batched into one message per step.
 
 1. Ask me to paste the raw task exactly as given (Jira/chat). Record it verbatim.
 2. Make me restate it in my own words: current behavior, desired behavior, trigger
@@ -14,14 +15,18 @@ Hard rule: no implementation until this brief is filled.
    - services/classes touched
    - the nearest existing precedent feature to imitate
    - what could break
-4. Draft 2-4 clarifying questions for my boss. Rules: never "how do I do this"; always
+4. Optional research sweep (skip silently for routine tasks): 1-2 Exa MCP searches
+   for best practices / similar implementations of this kind of feature; record 2-3
+   takeaways + links in the brief's Plan section.
+5. Draft 2-4 clarifying questions for my boss. Rules: never "how do I do this"; always
    options + my leaning ("I see A or B, I lean A because…"); include one scope-boundary
    question and one acceptance-confirmation question ("when <trigger>, system should
    <observable result> — correct?"). Batch into ONE copy-pasteable message.
-5. Write `.agent/briefs/NNN-<kebab-name>.md` (NNN = next number) with sections:
+6. Write `.agent/briefs/NNN-<kebab-name>.md` (NNN = next number) with sections:
    Raw task / In my own words / Blast radius / Questions (+ answers) / Acceptance
    criteria (checkboxes) / Plan (steps + test plan) / Assumptions. Status `[DRAFT]`.
-6. Run the Understanding Check with me — all must be YES before coding:
+7. Run the Understanding Check with me as a multi-choice checklist — all must be YES
+   before coding:
    - I can explain the feature without reading the ticket
    - I know which files I'll touch
    - I know how I'll prove it works

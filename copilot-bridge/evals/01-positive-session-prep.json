@@ -1,0 +1,13 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-session-prep",
+  "skill": "copilot-bridge",
+  "query": "I want to plan the avatar lip-sync feature with Copilot, prep me",
+  "files": [],
+  "expected_behavior": [
+    "Generates the context pack via scripts/context-pack.sh (not raw pasting)",
+    "Provides the session-opener prompt and instructs a FRESH chat",
+    "Ends with the handoff: Copilot drafts the token-sniper prompt for Windsurf"
+  ],
+  "should_NOT_trigger": false
+}

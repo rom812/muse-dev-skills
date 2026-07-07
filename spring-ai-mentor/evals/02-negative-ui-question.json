@@ -1,0 +1,11 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-ui-question",
+  "skill": "spring-ai-mentor",
+  "query": "my chat answer only appears after I click somewhere in the page",
+  "files": [],
+  "expected_behavior": [
+    "Routes to vaadin-mentor \u2014 that is a @Push/threading symptom, not Spring AI"
+  ],
+  "should_NOT_trigger": true
+}

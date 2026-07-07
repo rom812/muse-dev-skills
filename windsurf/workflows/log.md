@@ -7,8 +7,8 @@ description: Record an implementation-log entry — what AI generated, what I ve
 Target file: `.agent/logs/NNN-<same-name-as-brief>.md`. Create from scratch if missing
 (link the brief, status `[IN PROGRESS]`). Keep entries telegraphic — 2 minutes max.
 
-1. Ask me which of these just happened: (a) AI generated code, (b) something broke /
-   fix cycle, (c) task shipped.
+1. Ask me which of these just happened — as suggested-responses multi-choice, one
+   message: (a) AI generated code, (b) something broke / fix cycle, (c) task shipped.
 2. **(a) Generation entry** — add a row: prompt gist | what it generated | verified by
    (compile/test/trace/manual — named evidence, never "looks right") | trust level:
    `understood` / `mostly` / `⚠ magic`. Any `⚠ magic` → tell me to run /verify before commit.

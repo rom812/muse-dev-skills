@@ -1,0 +1,13 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-lost",
+  "skill": "stuck-protocol",
+  "query": "I've been staring at this SSO filter config for an hour and I'm lost",
+  "files": [],
+  "expected_behavior": [
+    "Asks Rung 0 (name the next 30-minute subtask) via interactive options first",
+    "Starts a real timeboxed attempt with a stuck log",
+    "Composes the final ask with attempts, results, and a mandatory best guess"
+  ],
+  "should_NOT_trigger": false
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "edge-second-failure",
+  "skill": "token-sniper",
+  "query": "the fix it generated failed again, should I ask it to fix again?",
+  "files": [],
+  "expected_behavior": [
+    "Blocks the blind loop \u2014 two failed prepared shots means the problem is under-understood",
+    "Routes back to feature-brief or domain-tutor instead of a third generation"
+  ],
+  "should_NOT_trigger": false
+}

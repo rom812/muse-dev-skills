@@ -1,15 +1,14 @@
 ---
 name: explain-before-merge
 description: 'Verification gate for AI-generated code before commit: explain every changed line, trace the runtime flow, hunt edge cases, and produce a PR description with a real test plan. Use before committing any AI-assisted change.'
+allowed-tools: Read, Edit, Grep, Glob, Bash, AskUserQuestion
 ---
 
 # Explain Before Merge
 
 The hard gate that ends the "commit AI code → it breaks → fix → looks bad" cycle.
-
-Core rule, borrowed from every senior engineer who survived AI adoption:
-**treat AI output like code from a stranger — if you can't explain a line, you can't
-commit it.** Plausible-looking is exactly where the subtle bugs hide.
+Core rule: **treat AI output like code from a stranger — if you can't explain a line,
+you can't commit it.** Plausible-looking is exactly where the subtle bugs hide.
 
 ## When this triggers
 
@@ -17,97 +16,93 @@ commit it.** Plausible-looking is exactly where the subtle bugs hide.
 - An impl-log has a `⚠ magic` generation entry.
 - The user invokes `/explain-before-merge` or `/verify`.
 
-## Protocol
+## When this does not trigger
+
+- Pre-implementation understanding → `feature-brief`.
+- Logging what happened → `impl-log` (this skill writes into it, but rows are its job).
+- Reviewing someone ELSE's PR — the gates assume the user authored (or AI-authored) the diff.
+
+## Required inputs
+
+- The final diff (run on the whole change, not per-file — the runtime trace needs it).
+- The task's brief (for intent and acceptance criteria) and impl-log (to update).
+- Build/test commands for the project.
+
+## Interactive questions rule
+
+When walking gates with the user, ask via the interactive question UI (`AskUserQuestion`
+in Claude Code, suggested-responses multi-choice in Cascade), batching per gate — e.g.
+hunk verdicts as options (Explained / Can't explain / Wrong), checklist items as
+multi-select. Never end a turn on an open free-text question when options can be offered.
+
+## Workflow
 
 ### Gate 1 — Line accountability
-
-Walk the diff hunk by hunk. For each hunk the user (not the AI) states in one sentence
-*what it does and why it's needed*. Three possible outcomes per hunk:
-
-- **Explained** → passes.
-- **Can't explain** → the AI explains it, then the user re-states it in their own words.
-  Still unclear → simplify the code until it IS explainable. Unexplainable code is a
-  liability regardless of whether it works.
-- **Explains it but it's wrong/unneeded** → congratulations, gate caught a bug for free.
-  Fix, log the fix cycle in the impl-log.
+Walk the diff hunk by hunk; the user states what each does and why. Outcomes:
+**Explained** → passes · **Can't explain** → AI explains, user restates in own words;
+still unclear → simplify the code until it IS explainable · **Wrong/unneeded** → gate
+caught a bug; fix and log the fix cycle.
 
 ### Gate 2 — Runtime trace
+Trace ONE real scenario end-to-end through the new code naming actual methods
+(chat message or topology event in → tool selection → tool execution → response into
+the UI). Slow down at async boundaries — that's where the bugs live.
 
-Trace ONE real scenario end-to-end through the new code, naming actual methods in order
-(request/event in → … → observable result out). If the trace hits a method whose behavior
-is a guess, stop and read it. For the Muse chatbot this usually means: chat message or
-topology event in → tool selection → tool execution → response/report out.
-
-### Gate 3 — Edge-case hunt (Spring Boot specific)
-
-Check the classics AI code systematically omits:
-
-- **Nulls/empties:** null params, empty lists, missing Optional handling
-- **Error paths:** what happens when the downstream service/tool throws? Swallowed
-  exceptions? User-facing error message vs stack trace?
-- **Concurrency:** shared mutable state in singleton beans (`@Component`/`@Service`
-  fields written per-request are a classic AI bug), `@Async` touching request-scoped data
-- **Transactions:** `@Transactional` on the right layer? Self-invocation breaking the proxy?
-- **Resources:** unclosed streams/clients, unbounded collections, missing timeouts on
-  external calls (LLM calls especially — they hang)
-- **Config:** hardcoded values that belong in `application.yml`
-- **Vaadin threading (this project's #1 trap):** any component touched from an async/AI
-  completion must be inside `ui.access(...)` with `@Push` enabled and a `ui.isAttached()`
-  guard; conversation state must live in `@UIScope`/session-scoped beans, never
-  singleton fields (see vaadin-mentor §2, §4, §7)
+### Gate 3 — Edge-case hunt (stack-specific classics AI omits)
+- Nulls/empties; missing Optional handling
+- Error paths: downstream/tool throws → swallowed? user-facing message vs stack trace?
+- Concurrency: mutable state in singleton beans; `@Async` + request-scoped data
+- `@Transactional` on the right layer; self-invocation proxy trap
+- Resources: unclosed clients; missing timeouts (LLM calls especially)
+- Config: hardcoded values that belong in `application.yml`
+- **Vaadin threading (this project's #1 trap):** components touched from async/AI
+  completions must be inside `ui.access(...)` with `@Push` enabled and a
+  `ui.isAttached()` guard; conversation state in `@UIScope`/session-scoped beans,
+  never singleton fields (vaadin-mentor §2, §4, §7).
 
 ### Gate 4 — Test plan executed (not just written)
-
-- Which acceptance criteria (from the brief) does this change satisfy? Prove each one:
-  unit test, integration test, or a described manual check *actually performed*.
-- Run the build + existing tests. Paste results into the impl-log's "Verified by".
+Map the change to the brief's acceptance criteria; prove each via unit test,
+integration test, or a manual check *actually performed now*. Run the build + existing
+tests; paste results into the impl-log's "Verified by".
 
 ### Gate 5 — Review defense (the "why did you implement it like that?" rehearsal)
+1. Fill the impl-log's decision table: choice / alternatives / why this one. If the AI
+   chose, ask it for alternatives + rationale, verify against the code, restate in own
+   words. An unverifiable rationale means the choice needs re-examining, not memorizing.
+2. Predict the 3 diff lines a reviewer will question; say the answers out loud once.
+3. Honest fallback for anything undefendable: "I followed the pattern from
+   `<precedent>`; let me double-check that choice and get back to you today" — then do.
+   NEVER answer "the AI did it that way."
 
-The reviewer WILL ask "why like this?" — and for AI-generated code the author often has
-no answer, which reads far worse than the code itself. Close that gap before pushing:
-
-1. **Build the decision record.** For every non-obvious choice in the diff, fill the
-   impl-log's decision table: choice / alternatives considered / why this one. If the
-   AI made the choice, ask it (or the AI at home, abstractly) "what were the
-   alternatives to this approach and why is this one right here?" — then *verify the
-   answer makes sense* and rewrite it in your own words. An unverifiable rationale
-   means the choice needs re-examining, not memorizing.
-2. **Rehearse the top 3.** Predict the three lines the reviewer is most likely to
-   question (the weirdest-looking ones). Say the answer out loud once.
-3. **Prepare the honest fallback.** For anything you still can't defend, the script is:
-   *"I followed the pattern from `<precedent>`; let me double-check that specific
-   choice and get back to you today."* — then actually follow up the same day.
-   One honest deferral builds more trust than ten bluffs; a bluff that unravels
-   destroys it. NEVER answer "the AI did it that way."
-
-### Output — PR description
-
-Generate ready-to-paste PR text:
-
-```
-## What
-[1-2 sentences]
-
-## Why
-[the problem, from the brief]
-
-## How
-[approach in 2-3 bullets, incl. which existing pattern it follows]
-
-## How I tested
-- [x] [concrete check 1]
-- [x] [concrete check 2]
-
-## Notes for reviewer
-[the one place that deserves extra eyes, stated honestly]
-```
-
-The "How I tested" section filled with real checks is the single highest-signal
-thing a junior can put in front of a reviewer.
-
-## Rules
+## Decision gates
 
 - Gates run in order; a failed gate loops back before proceeding.
-- Update the impl-log: `⚠ magic` entries become `understood`, fixes get logged.
-- 15 minutes on this gate is cheaper than one broken merge — both in time and reputation.
+- If Gate 1 leaves any hunk unexplainable after simplification attempts, the change
+  does not get committed.
+- If tests fail in Gate 4, stop and log the fix cycle — do not "commit and fix later".
+- If it never stops you, you're not running it honestly.
+
+## Output format
+
+Ready-to-paste PR description:
+**What** (1-2 sentences) · **Why** (from the brief) · **How** (3 bullets incl. which
+precedent it follows) · **How I tested** (checked boxes, concrete) · **Notes for
+reviewer** (the one place deserving extra eyes, stated honestly).
+Plus: impl-log updated (`⚠ magic` → `understood`, decision rows, fix cycles).
+
+## Gotchas
+
+- Reading silently doesn't count in Gate 1 — explain out loud; your eyes skip what
+  your mouth can't say.
+- "Compiles and looks clean" is not verification — run the real flow (dangerous AI
+  mistakes are code that runs but does the wrong thing).
+- 15 minutes here is cheaper than one broken merge — in time and in reputation.
+
+## Evaluation checklist
+
+- [ ] Every hunk explained (or simplified until explainable)?
+- [ ] One end-to-end trace done naming real methods?
+- [ ] Stack-specific edge cases checked, including Vaadin threading and LLM timeouts?
+- [ ] Each acceptance criterion proven by an executed check, results in the impl-log?
+- [ ] Decision table filled; top-3 reviewer questions rehearsed?
+- [ ] PR description produced with a concrete "How I tested"?

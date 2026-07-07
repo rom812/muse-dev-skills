@@ -1,0 +1,12 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "edge-unexplainable-hunk",
+  "skill": "explain-before-merge",
+  "query": "I can't explain what this generated stream operator chain does but tests pass",
+  "files": [],
+  "expected_behavior": [
+    "Does not pass the gate on green tests alone",
+    "Simplifies the code until explainable, or blocks the commit"
+  ],
+  "should_NOT_trigger": false
+}

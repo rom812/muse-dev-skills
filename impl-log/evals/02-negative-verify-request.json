@@ -1,0 +1,11 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-verify-request",
+  "skill": "impl-log",
+  "query": "walk me through this diff before I commit it",
+  "files": [],
+  "expected_behavior": [
+    "Routes to explain-before-merge \u2014 the verification walk lives there"
+  ],
+  "should_NOT_trigger": true
+}

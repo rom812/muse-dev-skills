@@ -1,0 +1,11 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-understanding",
+  "skill": "token-sniper",
+  "query": "what does the TriggerEngine class do?",
+  "files": [],
+  "expected_behavior": [
+    "Refuses to spend credits on comprehension \u2014 routes to grep/wiki/domain-tutor/free sessions"
+  ],
+  "should_NOT_trigger": true
+}

@@ -62,8 +62,8 @@ ones — they imitate far better than they reason. Every tactic below follows fr
    | Syntax/boilerplate | compiler (free) |
    | API exists / signature | compiler + one docs glance |
    | "Your codebase does X" | open the code — mandatory hop |
-   | Domain/telecom fact | wiki / knowledge note / Danny |
-   | Design choice ("best way is…") | precedent in repo; if none, it's a Danny-question, not an AI answer |
+   | Domain/telecom fact | wiki / knowledge note / my boss |
+   | Design choice ("best way is…") | precedent in repo; if none, it's a question for the boss, not an AI answer |
 6. **The error-feedback loop trap.** Feeding errors back can produce fresh hallucinations
    forever — devs report endless loops where every "fix" invents new problems. Hence the
    two-shot cap (SKILL.md step 4): after two failed prepared shots, the problem is

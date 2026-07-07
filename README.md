@@ -32,6 +32,21 @@ The system attacks four problems at once:
 
 ## Install
 
+> **Note (owner's machines): the skills are ALREADY INSTALLED** — all skills in
+> `~/.claude/skills/` at home, and the Windsurf workflows/rules in the work repo.
+> Re-running an installer is always safe: it overwrites with the latest version
+> (that's how updates ship). Agents: finding existing copies is expected, not an error.
+
+### Companion skills (installed separately, not part of this repo)
+
+From [LiozShor/claude-code-skills](https://github.com/LiozShor/claude-code-skills) (MIT):
+
+```bash
+# skill review/improvement + skill creation — install BOTH (they share scripts)
+npx skills add LiozShor/claude-code-skills@skill-improver -g -y
+npx skills add LiozShor/claude-code-skills@skills-build -g -y
+```
+
 ### Claude Code (home — your heavy-reasoning environment)
 
 ```bash

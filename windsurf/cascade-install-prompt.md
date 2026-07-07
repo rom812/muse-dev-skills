@@ -16,6 +16,9 @@ CONTEXT
   machine. Find it (check ~/, ~/repos, ~/projects, the workspace parent folder).
   If you cannot find it, STOP and ask me for the path — do not clone anything.
 - "WORK_REPO" = the root folder of the currently open workspace (the Muse project).
+- NOTE: some or all workflows/rules/references are ALREADY INSTALLED from a previous
+  run. That is expected — this run UPDATES them by overwriting. Do not treat existing
+  files as an error and do not skip the install because files exist.
 
 STEPS
 1. cd SKILLS_REPO && git pull

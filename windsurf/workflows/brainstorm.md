@@ -24,4 +24,4 @@ suggested-responses multi-choice.
    - Mine to build → seed a /brief with the validated approach and save the
      exploration to .agent/briefs/NNN-<topic>-brainstorm.md.
 Gate: no implementation and no /plan until the approach is validated (and approved
-by Danny when it's his call).
+by my boss when it's his call).

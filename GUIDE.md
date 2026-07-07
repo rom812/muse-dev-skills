@@ -11,13 +11,13 @@ Vaadin UI, topology tools, STT/TTS, job triggers.
 
 ## 1. /feature-brief — fire the moment a task lands 🏢 (draft) + 🏠 (thinking)
 
-**Fire when:** Danny assigns anything bigger than a one-line fix. Before ANY code. Before
+**Fire when:** my boss assigns anything bigger than a one-line fix. Before ANY code. Before
 you even estimate — the brief is what makes your estimate real.
 
 **How to invoke well:** paste the task *verbatim*, don't summarize it. The ambiguities in
-Danny's exact words are the raw material for your questions.
+my boss's exact words are the raw material for your questions.
 
-> `/brief` → *"Danny wrote in chat: 'we want the bot to also handle the case when a link
+> `/brief` → *"my boss wrote in chat: 'we want the bot to also handle the case when a link
 > goes down, same like the delete thing you did'"*
 
 **What good looks like:** the skill should force out the hidden questions. In that
@@ -31,10 +31,10 @@ means you ran it too shallow.
 - Step 3 (blast radius): always name the **precedent file** — for the example above,
   your existing link-deleted trigger. "Same as X but for Y" tasks are gifts: the brief
   almost writes itself, and the precedent becomes the AI prompt later.
-- Send the questions message to Danny *the same day* the task lands. Early questions =
+- Send the questions message to my boss *the same day* the task lands. Early questions =
   thorough; late questions = stuck.
 - **Don't** let it take more than ~30 minutes. A brief is a thinking tool, not a document
-  Danny will ever grade.
+  my boss will ever grade.
 
 **Common mistake:** running /brief but starting to code while "waiting for answers".
 If you must move, code only the part no answer can change (test scaffolding, the
@@ -83,7 +83,7 @@ breaks or ships (row / close).
 - Fill "Verified by" **immediately** after each generation, while you still remember
   what you actually checked. This field is the anti-"I don't know what the AI did".
 - The decision table is your review armor — one row per weird-looking choice, filled
-  during /verify. Before walking into any review with Danny, read your own decision
+  during /verify. Before walking into any review with my boss, read your own decision
   table once. That's the entire preparation.
 - Fix-cycle rows: the "wrong assumption" column is the only one that matters. After a
   month, `grep -h "assumption" .agent/logs/*` — the repeats are your personal checklist.
@@ -94,7 +94,7 @@ habit by Thursday. Telegraphic style; nobody reads this but you.
 
 ---
 
-## 4. /explain-before-merge (/verify) — the gate that changes Danny's opinion 🏢
+## 4. /explain-before-merge (/verify) — the gate that changes my boss's opinion 🏢
 
 **Fire when:** the diff is done and you're tempted to just push. That temptation is the
 trigger. Also whenever the impl-log has a `⚠ magic` row.
@@ -114,7 +114,7 @@ trace (gate 2) only makes sense on the whole change.
   2. conversation/user state in a singleton bean field
   3. LLM/tool call without a timeout
 - **Gate 5 (review defense):** fill the decision table, rehearse the 3 weirdest lines
-  aloud. If Danny asks something you didn't prep: *"I followed the pattern from X — let
+  aloud. If my boss asks something you didn't prep: *"I followed the pattern from X — let
   me double-check that choice and get back to you today."* Then actually do it.
 - The PR description output is not optional decoration — a filled "How I tested" section
   is the single strongest reputation-builder available to you.
@@ -184,9 +184,9 @@ the urge to procrastinate. That feeling is the trigger; don't wait to be "really
   timebox silently becomes 3 hours (this is THE failure mode the protocol exists for).
 - The stuck log doubles as the question. When the box expires you copy-paste, add your
   best guess, send. No composing under stress.
-- Route by weight: basics → your safe person; design/scope → Danny; batched small stuff
+- Route by weight: basics → your safe person; design/scope → my boss; batched small stuff
   → the Tue/Thu question slot.
-- Set up the question slot THIS week. One sentence to Danny: *"Instead of interrupting
+- Set up the question slot THIS week. One sentence to my boss: *"Instead of interrupting
   you randomly, can I collect questions for a 15-minute slot Tuesdays and Thursdays?
   I'll come with what I've tried documented."* This single structure deletes the
   "disturbing people" guilt permanently.
@@ -201,12 +201,12 @@ WITH a documented trail is the *strong* move; the silent lost day is the weak on
 **Fire when:** every morning before standup; Friday for the weekly; always before a 1:1.
 
 **The craft:**
-- Run it, then edit ONE thing: make the "Today" line match what Danny currently cares
+- Run it, then edit ONE thing: make the "Today" line match what my boss currently cares
   about. Relevance is what makes updates land.
 - Blockers: never bare. Options + leaning, or owner + age + workaround. (The skill
   enforces the phrasing — don't soften it back into "still fighting with X".)
 - The weekly's "Next week: top 2 priorities as I understand them" is your misalignment
-  radar — when Danny corrects it, you just saved a week of wrong work. That correction
+  radar — when my boss corrects it, you just saved a week of wrong work. That correction
   is a WIN, invite it.
 - Keep dailies under 60 words. Long standups read as busy-not-productive.
 
@@ -240,9 +240,9 @@ bot more proactive — ideas?"). Not when the task is concrete — that's /brief
 
 **The craft:** answer its one-at-a-time multi-choice questions honestly; demand the
 2-3 alternatives before agreeing to anything; the gold output is the ready-to-send
-options-plus-leaning proposal for Danny — proposing *options* is what makes a junior
+options-plus-leaning proposal for my boss — proposing *options* is what makes a junior
 read as senior. Gate: no code, no /plan, until the approach is validated (and
-approved, when it's Danny's call).
+approved, when it's my boss's call).
 
 ## 11. /task-planner (/plan) — the credit budgeter 🏢
 
@@ -253,14 +253,14 @@ for single-file tasks — the brief's §6 is enough.
 credits go before you're tempted mid-task. Every step needs a "Prove it" check; a
 step that can't name one gets split. Each `[GEN]` step then goes through /token-sniper
 (or Copilot drafts its prompt via bridge prompt #5). More than ~10 steps → the task
-itself needs splitting; that's a Danny conversation with options.
+itself needs splitting; that's a conversation with the boss, with options.
 
 ## Situation → skill cheat sheet
 
 | Situation | Run | Where |
 |---|---|---|
 | Idea / open-ended ask, no approach yet | /brainstorm | 🏢 + 🏠 |
-| Danny assigned something | /brief | 🏢 |
+| my boss assigned something | /brief | 🏢 |
 | Brief READY, task is multi-file | /plan | 🏢 |
 | "I don't know what this concept/service even is" | /tutor · /domain-tutor | 🏢 · 🏠 |
 | About to spend credits | /token-sniper prep (or Copilot handoff prompt #5) | 🪟/🏠 → 🏢 |
@@ -278,11 +278,11 @@ itself needs splitting; that's a Danny conversation with options.
 Habits stack; grabbing all of them in week one guarantees dropping all of them by week two.
 
 - **Week 1:** /brief on every new task + /log rows. (Understanding + paper trail.)
-- **Week 2:** add /verify before every push. Send Danny the question-slot request.
+- **Week 2:** add /verify before every push. Send my boss the question-slot request.
 - **Week 3:** add /stuck (timer!) and one /tutor note per day from the parking lot.
 - **Week 4:** add /standup daily + Friday weekly. Review the month: fix-cycle count,
   credit spend, question trend. That review IS your evidence the system works.
 
 By week 5 the loop runs itself — each skill's output feeds the next one's input, which
 is the real reason it holds: the brief writes your prompts, the prompts fill the log,
-the log answers Danny's "why", and the log writes your standups.
+the log answers my boss's "why", and the log writes your standups.

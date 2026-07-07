@@ -12,7 +12,7 @@ with "understand for 20 minutes, then code once."**
 ## When this triggers
 
 - The user got a new task/feature/bug from their boss and pastes or describes it.
-- The user says "Danny asked me to…", "I need to implement…", "new ticket…".
+- The user says "my boss asked me to…", "I need to implement…", "new ticket…".
 - The user invokes `/feature-brief`.
 
 ## When this does not trigger

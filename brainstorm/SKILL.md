@@ -13,7 +13,7 @@ answers and an output that feeds `feature-brief`.
 
 ## When this triggers
 
-- The user has an idea or an open-ended ask with no committed approach: "Danny wants
+- The user has an idea or an open-ended ask with no committed approach: "my boss wants
   the bot to be more proactive — ideas?", "how could we improve the avatar?".
 - A feature-brief stalled because the *approach itself* is undecided (not the requirements).
 - The user invokes `/brainstorm`.

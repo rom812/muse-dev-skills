@@ -18,7 +18,7 @@ description: I'm stuck or lost — run the escalation ladder and build a well-fo
    "I'm trying to [goal]. I tried [A] → [result], [B] → [result]. My best guess is [C]
    because [reasoning]. Am I on the right track?"
    Best-guess line is mandatory. Suggest whether it goes to my safe person, my
-   question-slot batch, or immediately to Danny (blocking + deadline = immediately).
+   question-slot batch, or immediately to my boss (blocking + deadline = immediately).
 6. When the answer comes: record it in the parking-lot note or promote to /tutor;
    log the ask in the impl-log. Asking after a documented timebox is discipline,
    not weakness — sitting silent past 2× the timebox is the actual failure mode.

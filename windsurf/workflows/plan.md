@@ -22,6 +22,6 @@ Ask me everything via suggested-responses multi-choice, batched per decision.
 4. Risks: top 2-3 with mitigations + what to check before merge + rollback note.
 5. Save .agent/plans/NNN-<same-name-as-brief>.md; link it from the brief §6 and the
    impl-log. More than ~10 steps → propose splitting the task and draft the
-   options-plus-leaning message for Danny.
+   options-plus-leaning message for my boss.
 Gate: a step without a "Prove it" check isn't a step — split or clarify. Deviations
 during implementation go to the impl-log, never silent plan rewrites.

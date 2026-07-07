@@ -1,5 +1,5 @@
 # Brief NNN: [Task name]
-**Status:** [DRAFT]   **Date:** YYYY-MM-DD   **Source:** [Danny / Jira-123 / chat]
+**Status:** [DRAFT]   **Date:** YYYY-MM-DD   **Source:** [my boss / Jira-123 / chat]
 **Impl-log:** [link when created]
 
 ## 1. Raw task (as given)

@@ -6,13 +6,13 @@ fix cycle and makes you look worse than you are.** Twenty minutes of structured 
 up front replaces two days of flailing.
 
 ```
-        TASK ARRIVES (from Danny / Jira / chat)
+        TASK ARRIVES (from my boss / Jira / chat)
               │
               ▼
  ┌─ 1. UNDERSTAND ──────────────────────────────┐
  │  /feature-brief  → one-page brief             │
  │  Domain gap found? → /domain-tutor first      │
- │  Output: 2-4 smart questions for Danny        │◄─── This is where you WIN.
+ │  Output: 2-4 smart questions for my boss      │◄─── This is where you WIN.
  │  ⛔ HARD GATE: no code before the brief is    │     Good questions early =
  │     filled and questions are answered.        │     competent. Fixes later =
  └──────────────┬───────────────────────────────┘     incompetent.
@@ -50,7 +50,7 @@ up front replaces two days of flailing.
 
 - **Before step 1**, when the approach itself is undecided (an idea, an open-ended ask):
   `/brainstorm` — one-question-at-a-time exploration → 2-3 alternatives → validated
-  approach → feeds the brief (or becomes an options-plus-leaning proposal for Danny).
+  approach → feeds the brief (or becomes an options-plus-leaning proposal for my boss).
 - **Between steps 2 and 3**, for multi-file/multi-day tasks: `/task-planner` (`/plan`
   in Windsurf) — the brief becomes one-shot-sized steps tagged `[GEN]`/`[HAND]`/`[FREE]`;
   each `[GEN]` step is exactly one prepared token-sniper shot.

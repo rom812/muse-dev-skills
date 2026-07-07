@@ -1,0 +1,14 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-open-idea",
+  "skill": "brainstorm",
+  "query": "Danny said the bot should be 'more proactive' \u2014 help me figure out what that could mean",
+  "files": [],
+  "expected_behavior": [
+    "Asks ONE question per message via interactive multi-choice",
+    "Presents 2-3 approaches with trade-offs and a stated recommendation",
+    "Applies YAGNI and validates the design in small sections",
+    "Lands the output as an options-plus-leaning proposal for Danny or a seeded feature-brief"
+  ],
+  "should_NOT_trigger": false
+}

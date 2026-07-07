@@ -14,7 +14,9 @@ The system attacks four problems at once:
 
 | Skill | What it does | When to run |
 |-------|--------------|-------------|
+| **[brainstorm](brainstorm/)** | Explore a vague idea into a validated approach: one question at a time, 2-3 alternatives with trade-offs, incremental design check. Feeds feature-brief or a proposal for the boss. | Idea/open ask, no committed approach |
 | **[feature-brief](feature-brief/)** | Turn a vague task from your boss into a one-page brief: problem, affected services, acceptance criteria, smart clarifying questions. **No code before a brief exists.** | The moment you get a task |
+| **[task-planner](task-planner/)** | Decompose a READY brief into one-shot-sized steps tagged [GEN]/[HAND]/[FREE] — the plan doubles as your credit budget. | Multi-file/multi-day tasks, after the brief |
 | **[domain-tutor](domain-tutor/)** | Teach yourself one domain concept (a Muse service, topology, a flow) and save a permanent knowledge note in your own words. | Whenever the brief reveals a gap |
 | **[impl-log](impl-log/)** | Log every implementation: what AI generated, what you verified, what broke, what you learned. Your "harness the AI" journal. | During + after every task |
 | **[explain-before-merge](explain-before-merge/)** | Verification gate: explain every changed line, trace the flow, check edge cases, generate the PR description. | Before every commit |

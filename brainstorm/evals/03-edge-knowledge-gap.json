@@ -1,0 +1,12 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "edge-knowledge-gap",
+  "skill": "brainstorm",
+  "query": "let's brainstorm how to improve topology sync (I don't really know how sync works)",
+  "files": [],
+  "expected_behavior": [
+    "Detects the domain-knowledge gap during refinement",
+    "Routes to domain-tutor before generating approaches"
+  ],
+  "should_NOT_trigger": false
+}

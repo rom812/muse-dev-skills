@@ -20,6 +20,8 @@ with "understand for 20 minutes, then code once."**
 - Trivial mechanical changes (typo, rename, config value) — say you're skipping and do it directly.
 - A task already covered by an existing `[READY]` brief — extend that brief instead of creating one.
 - Pure explanation/learning questions with no implementation ask — answer directly, or route to `domain-tutor`.
+- The approach itself is still undecided (an idea, several possible directions) → `brainstorm` first.
+- Decomposing an already-briefed multi-file task into steps → `task-planner`.
 
 ## Required inputs
 
@@ -82,6 +84,8 @@ Present as an interactive multi-choice checklist; all must be YES:
 explain without reading the ticket · know which files change · know how to prove it
 works · open questions sent or consciously assumed (written down).
 Any NO → `domain-tutor` (knowledge gap) or Step 5 (requirements gap).
+All YES → multi-file/multi-day tasks go to `task-planner`; small tasks go straight to
+`token-sniper` with the brief's §6 plan.
 
 ## Decision gates
 

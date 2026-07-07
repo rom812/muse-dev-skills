@@ -1,0 +1,14 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-multifile",
+  "skill": "task-planner",
+  "query": "brief 007 is READY \u2014 break the report-export feature into implementation steps",
+  "files": [],
+  "expected_behavior": [
+    "Verifies the brief is READY before planning",
+    "Produces steps each sized for one prepared generation, with files, precedent, and a Prove-it check",
+    "Tags every step [GEN]/[HAND]/[FREE]",
+    "Saves .agent/plans/007-*.md and links it from the brief and impl-log"
+  ],
+  "should_NOT_trigger": false
+}

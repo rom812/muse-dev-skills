@@ -1,0 +1,11 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-no-brief",
+  "skill": "task-planner",
+  "query": "plan out this new feature Danny just mentioned in chat",
+  "files": [],
+  "expected_behavior": [
+    "Routes to feature-brief first \u2014 no planning on unvalidated understanding"
+  ],
+  "should_NOT_trigger": true
+}

@@ -22,6 +22,8 @@ turns each generation into a **prepared, single, well-aimed shot**.
 - Understanding-phase work (what does X do, what does this term mean) — that's grep,
   wiki, `domain-tutor`, or free Copilot/home sessions; credits never buy comprehension.
 - Planning with the unlimited chat model → `copilot-bridge` (which then hands off here).
+- Decomposing a multi-file task into steps → `task-planner` (its `[GEN]` steps feed
+  this skill, one step = one shot).
 - Framework-pattern questions → `spring-ai-mentor` / `vaadin-mentor` (their references
   feed this skill's prompts).
 

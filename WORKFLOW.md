@@ -46,6 +46,15 @@ up front replaces two days of flailing.
  └──────────────────────────────────────────────┘
 ```
 
+## Two optional expansions of the loop
+
+- **Before step 1**, when the approach itself is undecided (an idea, an open-ended ask):
+  `/brainstorm` — one-question-at-a-time exploration → 2-3 alternatives → validated
+  approach → feeds the brief (or becomes an options-plus-leaning proposal for Danny).
+- **Between steps 2 and 3**, for multi-file/multi-day tasks: `/task-planner` (`/plan`
+  in Windsurf) — the brief becomes one-shot-sized steps tagged `[GEN]`/`[HAND]`/`[FREE]`;
+  each `[GEN]` step is exactly one prepared token-sniper shot.
+
 ## The three-environment split
 
 You have three AI environments with different constraints. Use each for what it's good at:

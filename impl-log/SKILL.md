@@ -48,7 +48,8 @@ prompts and standups write themselves.
 Copy `assets/impl-log-template.md`, link the brief, status `[IN PROGRESS]`.
 
 ### After each AI generation (the core habit — 4 lines, 2 minutes)
-- **Prompt (gist):** what was asked · **Got:** what it generated, matched the plan?
+- **Prompt (gist):** what was asked (reference the plan step, e.g. "plan step 3",
+  when a `task-planner` plan exists) · **Got:** what it generated, matched the plan?
 - **Verified by:** compile/test/trace/manual — *named evidence*, never "looks right"
 - **Trust level:** `understood` / `mostly` / `⚠ magic`
 - Optionally: rough credit cost of the generation.

@@ -233,11 +233,35 @@ thousands of raw lines; feed it a generated context pack instead.
 **Common mistake:** trusting it about your codebase beyond what the pack shows. It's
 stronger, not psychic — the one-hop verification rule still applies.
 
+## 10. /brainstorm — before there's even a task 🏢 + 🏠
+
+**Fire when:** an idea or open-ended ask exists but no committed approach ("make the
+bot more proactive — ideas?"). Not when the task is concrete — that's /brief.
+
+**The craft:** answer its one-at-a-time multi-choice questions honestly; demand the
+2-3 alternatives before agreeing to anything; the gold output is the ready-to-send
+options-plus-leaning proposal for Danny — proposing *options* is what makes a junior
+read as senior. Gate: no code, no /plan, until the approach is validated (and
+approved, when it's Danny's call).
+
+## 11. /task-planner (/plan) — the credit budgeter 🏢
+
+**Fire when:** a brief is `[READY]` and the task spans multiple files or days. Skip
+for single-file tasks — the brief's §6 is enough.
+
+**The craft:** the `[GEN]/[HAND]/[FREE]` tags ARE the skill — they decide where your
+credits go before you're tempted mid-task. Every step needs a "Prove it" check; a
+step that can't name one gets split. Each `[GEN]` step then goes through /token-sniper
+(or Copilot drafts its prompt via bridge prompt #5). More than ~10 steps → the task
+itself needs splitting; that's a Danny conversation with options.
+
 ## Situation → skill cheat sheet
 
 | Situation | Run | Where |
 |---|---|---|
+| Idea / open-ended ask, no approach yet | /brainstorm | 🏢 + 🏠 |
 | Danny assigned something | /brief | 🏢 |
+| Brief READY, task is multi-file | /plan | 🏢 |
 | "I don't know what this concept/service even is" | /tutor · /domain-tutor | 🏢 · 🏠 |
 | About to spend credits | /token-sniper prep (or Copilot handoff prompt #5) | 🪟/🏠 → 🏢 |
 | Starting a Copilot session | context-pack.sh + session opener | 🪟 |

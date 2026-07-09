@@ -1,0 +1,15 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-flow-question",
+  "skill": "flow-tracer",
+  "query": "what actually happens after the bot receives a chat message until the topology tool runs? I keep getting lost between the services",
+  "files": [],
+  "expected_behavior": [
+    "Checks .agent/knowledge/traces/INDEX.md before tracing anything",
+    "Pins one concrete entry point and a stopping edge via interactive options",
+    "Drafts the chain with free tools, every step marked verified or ⚠ inferred",
+    "Routes ⚠ steps to user verification with the 10-minute debugger rule",
+    "Ends only after the trace note + INDEX line are written"
+  ],
+  "should_NOT_trigger": false
+}

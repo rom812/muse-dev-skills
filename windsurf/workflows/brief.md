@@ -15,6 +15,8 @@ Ask me everything via suggested-responses multi-choice, batched into one message
    - services/classes touched
    - the nearest existing precedent feature to imitate
    - what could break
+   - saved knowledge first: `.agent/knowledge/codemaps/` + `.agent/knowledge/traces/INDEX.md`
+     — if the affected flow has no trace and I can't narrate it, run /trace first
 4. Optional research sweep (skip silently for routine tasks): 1-2 Exa MCP searches
    for best practices / similar implementations of this kind of feature; record 2-3
    takeaways + links in the brief's Plan section.

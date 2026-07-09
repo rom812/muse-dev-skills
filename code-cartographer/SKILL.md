@@ -28,6 +28,8 @@ turns are spent only on *inferring purpose*.
 
 - Understanding one *concept* (an entity, a flow's meaning) → `domain-tutor` —
   cartographer says where things are and what they're for; tutor teaches what they mean.
+- Following ONE runtime flow step-by-step ("what happens when X?") → `flow-tracer` —
+  the map is the atlas; a trace is one verified route drawn on it.
 - A one-time narrative onboarding guide for a single repo → the `codebase-onboarding`
   companion skill; cartographer maintains living maps, not a document you read once.
 - Decomposing a briefed task → `task-planner`.

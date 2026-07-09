@@ -27,6 +27,7 @@ The system attacks four problems at once:
 | **[stuck-protocol](stuck-protocol/)** | Escalation ladder for being stuck: timeboxed attempts with a documented trail → well-formed question with a best guess. Plus question-slot and parking-lot habits. | The moment you feel lost |
 | **[copilot-bridge](copilot-bridge/)** | Use the unlimited chat-only strong model as the planning brain: context packs instead of raw-code pastes, stateless sessions, handoff prompts to Windsurf. Includes `context-pack.sh`. | Every Copilot session |
 | **[code-cartographer](code-cartographer/)** | Living maps of a multi-repo system: CODEMAP per repo + cross-repo SYSTEM-MAP with anchored edges. Incremental, free-recon-first, one area per session. | "Where does X live?" across repos |
+| **[flow-tracer](flow-tracer/)** | Trace one runtime flow into a verified call-chain note: real Class.method steps, data shapes, async/repo boundaries — verified vs ⚠ inferred markers, never trace the same flow twice. | "What happens when X?" moments |
 
 **The master loop that ties them together: [WORKFLOW.md](WORKFLOW.md).** Read it first.
 **How to run each skill well (invocations, examples, common mistakes): [GUIDE.md](GUIDE.md).**

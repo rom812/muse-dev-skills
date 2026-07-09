@@ -58,7 +58,9 @@ touched · **the nearest existing precedent to imitate** (always look first — 
 nearest existing pattern is worth more than any generated code) · what could break.
 Check `.agent/knowledge/codemaps/` first — if the touched area is unmapped and the
 blast radius is unclear, a `code-cartographer` session on that one area pays for
-itself immediately.
+itself immediately. Then check `.agent/knowledge/traces/INDEX.md` — a saved trace of
+the affected flow turns blast-radius from guessing into lookup; no trace and the flow
+can't be narrated → `flow-tracer` before estimating anything.
 
 ### Step 4 — Optional research sweep (2–5 min, skip silently if not useful)
 

@@ -1,0 +1,12 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-concept-question",
+  "skill": "flow-tracer",
+  "query": "I don't really understand what a topology link IS in our product — what does link-down vs link-deleted mean?",
+  "files": [],
+  "expected_behavior": [
+    "Does not start a code trace",
+    "Routes to domain-tutor: the gap is a concept's meaning, not a code path"
+  ],
+  "should_NOT_trigger": true
+}

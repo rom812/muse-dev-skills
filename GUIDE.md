@@ -270,6 +270,34 @@ anchor proving it. The payoff compounds: SYSTEM-MAP.md auto-rides into every Cop
 context pack, blast-radius answers become lookups, and six weeks in you'll be the
 person who answers "what talks to what" in meetings.
 
+## 13. /flow-tracer (/trace) — from "how does this even happen" to a verified chain 🏢
+
+**Fire when:** a brief's blast radius touches a flow you can't narrate end-to-end, or
+any "what actually happens when X" moment mid-task. FIRST check
+`.agent/knowledge/traces/INDEX.md` — a hit means minutes of re-verification, not a
+fresh trace.
+
+**The craft:**
+- The AI drafts the chain with free tools (grep, call hierarchy, wiki MCP) — every
+  step marked `verified` or `⚠ inferred`. Tracing is retrieval; it never spends a
+  paid generation.
+- The ⚠ steps are YOURS. **The 10-minute rule:** any step that survives 10 minutes of
+  reading unexplained (DI magic, @Async, Spring proxies, tool selection) → breakpoint
+  at the entry point, ONE real request, step through. `verified: debugger` in minutes
+  beats an hour of static guessing — the single most repeated senior answer in every
+  "how do you learn codebases fast" thread.
+- Time-box 30-45 min. A ballooning trace means the flow is too big — split at an
+  async/repo boundary and trace the half blocking today's task.
+- Repo-hops discovered while tracing are pre-anchored SYSTEM-MAP edges — feed them to
+  /map for free.
+- **Never trace twice** is a gate, not advice: the note is the point. The next task in
+  that area starts from the trace instead of from zero — that's the mechanism by which
+  time-to-first-commit actually drops.
+
+**Common mistake:** treating the AI's draft chain as truth. It's a hypothesis with
+confidence markers — the ⚠ steps are exactly where Spring's magic makes plausible
+guesses wrong.
+
 ## Situation → skill cheat sheet
 
 | Situation | Run | Where |
@@ -286,6 +314,7 @@ person who answers "what talks to what" in meetings.
 | Lost / spinning / avoiding | /stuck | 🏢 + 🏠 |
 | Bot ignores a tool, streaming/UI bugs | mentor pitfall tables | 🏢 + 🏠 |
 | "Where does X live?" across the 5 repos | /map | 🏢 |
+| "What happens when X?" — can't narrate a flow | /trace | 🏢 |
 | Morning / Friday / before 1:1 | /standup | 🏢 |
 | Review in an hour | read your decision table | 🏢 |
 

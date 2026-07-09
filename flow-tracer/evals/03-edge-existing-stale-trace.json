@@ -1,0 +1,13 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "edge-existing-stale-trace",
+  "skill": "flow-tracer",
+  "query": "trace the chat message flow for me",
+  "files": [".agent/knowledge/traces/INDEX.md contains chat-message-flow.md, last verified 4 months ago"],
+  "expected_behavior": [
+    "Finds the existing trace via INDEX before drafting anything new",
+    "Re-verifies the stale trace's ⚠ steps and refactored segments instead of re-tracing from zero",
+    "Updates Last verified date and INDEX line; does not create a duplicate note"
+  ],
+  "should_NOT_trigger": false
+}

@@ -32,3 +32,8 @@ trigger: always_on
   singleton fields; LLM calls never run on the UI/request thread.
 - After changes, update the matching impl log at `.agent/design-logs/NNN-<task>.md`
   (run /log) — impl logs share the design-logs folder, numbering, and INDEX.md.
+- Flow questions have a 10-minute static-reading budget: if tracing "what happens
+  when X" by reading stalls past it, stop — breakpoint at the entry point, ONE real
+  request, step through (run /trace). Runtime is ground truth.
+- No tracing session ends without its note: `.agent/knowledge/traces/<flow>.md` +
+  INDEX line (2 minutes, telegraphic). Re-deriving a flow already traced is the leak.

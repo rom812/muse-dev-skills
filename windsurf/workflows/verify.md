@@ -37,5 +37,5 @@ Rule: if I can't explain a line, I don't commit it. Run the gates in order.
    What (1-2 sentences) / Why (from brief) / How (3 bullets incl. which precedent it
    follows) / How I tested (checked boxes, concrete) / Notes for reviewer (the one spot
    deserving extra eyes, stated honestly).
-6. Update `.agent/logs/NNN-*.md`: mark verified entries `understood`, log any fix cycle
-   (what broke / root cause / which assumption was wrong).
+6. Update the impl log at `.agent/design-logs/NNN-*.md`: mark verified entries
+   `understood`, log any fix cycle (what broke / root cause / which assumption was wrong).

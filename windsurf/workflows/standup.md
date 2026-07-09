@@ -4,7 +4,8 @@ description: Generate my standup update or Friday weekly summary from briefs and
 
 # /standup — Standup Reporter
 
-1. Read `.agent/logs/` and `.agent/briefs/` files modified in the window (daily: since
+1. Read `.agent/design-logs/` (impl logs — `**Type:** IMPL`; skim the Description
+   headers first) and `.agent/briefs/` files modified in the window (daily: since
    yesterday; if I said "weekly": last 7 days).
 2. **Daily** — output under 60 words:
    - Yesterday: shipped/progressed, concrete + past tense ("finished X, verified with Y")

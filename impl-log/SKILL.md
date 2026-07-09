@@ -34,18 +34,31 @@ prompts and standups write themselves.
 - Which event just happened: generation / fix cycle / shipped (ask via interactive
   multi-choice — `AskUserQuestion` in Claude Code, suggested responses in Cascade —
   one message, one click).
-- The matching brief number (same NNN).
+- The linked brief (its own number — the log gets a NEW number from the design-log sequence).
 - For generations: prompt gist, what was produced, verification evidence, trust level.
 
 ## The log lifecycle
 
-`.agent/logs/NNN-<same-name-as-brief>.md` — statuses:
-`[IN PROGRESS]` → `[NEEDS TESTING]` → `[SHIPPED]` (or `[ABANDONED]` with a why).
+`.agent/design-logs/NNN-<kebab-task-name>.md` — impl logs live in the SAME folder,
+numbering sequence, and INDEX.md as the design logs (one searchable history, not two).
+Statuses: `[IN PROGRESS]` → `[NEEDS TESTING]` → `[SHIPPED]` (or `[ABANDONED]` with a why).
 
 ## Workflow
 
 ### On creation
-Copy `assets/impl-log-template.md`, link the brief, status `[IN PROGRESS]`.
+- NNN = next sequential number in the shared sequence: read
+  `.agent/design-logs/INDEX.md` + existing filenames, take max + 1. Do NOT reuse the
+  brief's number — the brief is linked in the header instead.
+- Copy `assets/impl-log-template.md`, link the brief, status `[IN PROGRESS]`.
+- Fill the low-token search header (title, `**Type:** IMPL`, status, date, brief link)
+  and the `## Description` section: 2-4 self-contained lines + a `**Keywords:**` grep-bait
+  line — same idea as the design logs; a future session reads only the first ~10 lines
+  to decide relevance.
+- Append a row to `.agent/design-logs/INDEX.md` following the table format already in
+  that file (don't invent new columns); mark it as an impl log (e.g. `IMPL` in the
+  type/title cell) with status + the same one-line description. If INDEX.md doesn't
+  exist yet, create it — one row per EXISTING log too (backfill from their headers):
+  `| NNN | Title (link) | Type (DESIGN/IMPL) | Status | One-line description |`.
 
 ### After each AI generation (the core habit — 4 lines, 2 minutes)
 - **Prompt (gist):** what was asked (reference the plan step, e.g. "plan step 3",
@@ -69,6 +82,10 @@ Status → `[SHIPPED]`; check acceptance criteria against the brief; fill "What 
 learned" (one honest paragraph) and "Reusable" (promote big items to a `domain-tutor`
 knowledge note); mark the brief `[DONE]`.
 
+### On every status change
+Update the log's row in `.agent/design-logs/INDEX.md` (created / `[SHIPPED]` /
+`[ABANDONED]`) — a log the INDEX doesn't know about doesn't exist.
+
 ## Decision gates
 
 - Never record a generation without a filled "Verified by" — empty verification means
@@ -89,10 +106,17 @@ surface any `⚠ magic` entries still needing `explain-before-merge`.
   visible later.
 - Logs live in the work project's `.agent/` (local-only via `.git/info/exclude`),
   never in a personal repo.
+- Never write to a separate `.agent/logs/` folder — that fragments the history. One
+  folder (`design-logs/`), one INDEX, one number sequence shared with the design logs.
 
 ## Evaluation checklist
 
-- [ ] Log exists with the same NNN as its brief?
+- [ ] Log created in `.agent/design-logs/` with the next sequential number from INDEX.md
+      (not the brief's number), brief linked in the header?
+- [ ] Header has `**Type:** IMPL`, a filled `## Description` (2-4 lines), and a
+      `**Keywords:**` line — relevance decidable from the first ~10 lines alone?
+- [ ] INDEX.md row appended on creation and updated on every status change, matching
+      the existing table format?
 - [ ] Every generation row has named verification evidence and a trust level?
 - [ ] Fix-cycle rows include the wrong-assumption column?
 - [ ] The which-event question was asked via interactive UI, one message?
@@ -100,5 +124,5 @@ surface any `⚠ magic` entries still needing `explain-before-merge`.
 
 ## Assets
 
-- `assets/impl-log-template.md` — the log structure (generations, decision record,
-  fix cycles, shipped, learned, reusable).
+- `assets/impl-log-template.md` — the log structure (search header + description,
+  generations, decision record, fix cycles, shipped, learned, reusable).

@@ -39,7 +39,7 @@ mkdir -p .agent
     echo
   fi
 
-  latest_log=$(ls -1 .agent/logs/*.md 2>/dev/null | sort | tail -1 || true)
+  latest_log=$(ls -1 .agent/design-logs/[0-9]*.md 2>/dev/null | sort | tail -1 || true)
   if [ -n "${latest_log:-}" ]; then
     echo "## Latest implementation log — ${latest_log}"
     cat "$latest_log"

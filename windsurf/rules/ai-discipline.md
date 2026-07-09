@@ -30,4 +30,5 @@ trigger: always_on
   `ui.access(...)` (capture `UI.getCurrent()` before going async, `@Push` required);
   per-conversation/user state lives in `@UIScope`/session-scoped beans, never in
   singleton fields; LLM calls never run on the UI/request thread.
-- After changes, update the matching log at `.agent/logs/NNN-<task>.md` (run /log).
+- After changes, update the matching impl log at `.agent/design-logs/NNN-<task>.md`
+  (run /log) — impl logs share the design-logs folder, numbering, and INDEX.md.

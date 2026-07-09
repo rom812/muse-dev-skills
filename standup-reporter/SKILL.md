@@ -7,8 +7,8 @@ allowed-tools: Read, Grep, Glob, AskUserQuestion
 # Standup Reporter
 
 Half of "he can't get things done" is actually "nobody hears about what he does."
-This skill converts the paper trail (`.agent/logs/`, `.agent/briefs/`) into updates
-that make delivered work — and competent process — visible.
+This skill converts the paper trail (impl logs in `.agent/design-logs/`,
+`.agent/briefs/`) into updates that make delivered work — and competent process — visible.
 
 ## When this triggers
 
@@ -28,8 +28,10 @@ that make delivered work — and competent process — visible.
 
 - The window: daily (since yesterday) or weekly (last 7 days) — if ambiguous, ask via
   interactive multi-choice (`AskUserQuestion` / Cascade suggested responses), one message.
-- `.agent/logs/*` and `.agent/briefs/*` modified in the window; if unavailable in this
-  environment, ask for a 3-line dump of what happened and build from that.
+- Impl logs (`.agent/design-logs/*` with `**Type:** IMPL` — skim Description headers
+  first, read bodies only for window hits) and `.agent/briefs/*` modified in the window;
+  if unavailable in this environment, ask for a 3-line dump of what happened and build
+  from that.
 
 ## Workflow
 

@@ -86,7 +86,7 @@ breaks or ships (row / close).
   during /verify. Before walking into any review with my boss, read your own decision
   table once. That's the entire preparation.
 - Fix-cycle rows: the "wrong assumption" column is the only one that matters. After a
-  month, `grep -h "assumption" .agent/logs/*` — the repeats are your personal checklist.
+  month, `grep -h "assumption" .agent/design-logs/*` — the repeats are your personal checklist.
 - Friday: the logs feed /standup weekly automatically. Zero extra work.
 
 **Common mistake:** writing essays. If a log entry takes >2 minutes you'll quit the

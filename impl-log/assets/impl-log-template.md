@@ -1,5 +1,12 @@
 # Log NNN: [Task name]
-**Status:** [IN PROGRESS]   **Brief:** [briefs/NNN-….md]   **Started:** YYYY-MM-DD
+**Type:** IMPL   **Status:** [IN PROGRESS]   **Started:** YYYY-MM-DD
+**Brief:** [.agent/briefs/NNN-….md]   **Related logs:** [DL-NNN / log NNN, or "None"]
+
+## Description
+[2-4 self-contained lines: what this task is, which services/classes/endpoints it
+touches, and the outcome once shipped. A future session reads ONLY this section to
+decide if the log is relevant — write it for that reader.]
+**Keywords:** [grep bait — feature name, class names, endpoints, error strings]
 
 ## Generations
 | # | Prompt (gist) | Got | Verified by | Trust |

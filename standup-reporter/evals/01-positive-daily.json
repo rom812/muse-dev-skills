@@ -6,7 +6,7 @@
   "files": [],
   "expected_behavior": [
     "Confirms the window via interactive multi-choice if ambiguous",
-    "Reads .agent/logs and briefs from the window",
+    "Reads impl logs in .agent/design-logs and briefs from the window",
     "Outputs under 60 words with past-tense proof and rule-compliant blockers"
   ],
   "should_NOT_trigger": false

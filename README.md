@@ -91,9 +91,9 @@ Skills write briefs/logs/notes into a `.agent/` folder **inside whatever project
 
 ```
 <project>/.agent/
-├── briefs/       # feature briefs (one per task)
-├── logs/         # implementation logs (one per task)
-└── knowledge/    # domain notes (one per concept)
+├── briefs/        # feature briefs (one per task)
+├── design-logs/   # design logs + impl logs — one shared number sequence + INDEX.md
+└── knowledge/     # domain notes (one per concept)
 ```
 
 **At work, keep `.agent/` out of the shared repo without touching the team's .gitignore:**

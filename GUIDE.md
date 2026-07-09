@@ -255,6 +255,21 @@ step that can't name one gets split. Each `[GEN]` step then goes through /token-
 (or Copilot drafts its prompt via bridge prompt #5). More than ~10 steps → the task
 itself needs splitting; that's a conversation with the boss, with options.
 
+## 12. /code-cartographer (/map) — the 5-repo compass 🏢
+
+**Fire when:** a "where does X live / who consumes Y" question spans repos, or a
+brief's blast radius hits unmapped territory. One-time prerequisite: add all repos to
+one Windsurf workspace (File → Add Folder to Workspace) so semantic retrieval spans
+the system.
+
+**The craft:** one area per session, always the one blocking today's task — the map
+grows lazily or it dies. Free recon (tree, pom.xml, entry-point greps) happens before
+any paid turn; the AI only infers *purpose*, one module at a time, in YOUR words.
+Cross-repo edges are the crown jewels: no edge enters SYSTEM-MAP.md without a code
+anchor proving it. The payoff compounds: SYSTEM-MAP.md auto-rides into every Copilot
+context pack, blast-radius answers become lookups, and six weeks in you'll be the
+person who answers "what talks to what" in meetings.
+
 ## Situation → skill cheat sheet
 
 | Situation | Run | Where |
@@ -270,6 +285,7 @@ itself needs splitting; that's a conversation with the boss, with options.
 | About to commit/push | /verify | 🏢 |
 | Lost / spinning / avoiding | /stuck | 🏢 + 🏠 |
 | Bot ignores a tool, streaming/UI bugs | mentor pitfall tables | 🏢 + 🏠 |
+| "Where does X live?" across the 5 repos | /map | 🏢 |
 | Morning / Friday / before 1:1 | /standup | 🏢 |
 | Review in an hour | read your decision table | 🏢 |
 

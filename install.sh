@@ -7,7 +7,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-SKILLS=(feature-brief domain-tutor impl-log explain-before-merge spring-ai-mentor token-sniper standup-reporter stuck-protocol vaadin-mentor copilot-bridge brainstorm task-planner)
+SKILLS=(feature-brief domain-tutor impl-log explain-before-merge spring-ai-mentor token-sniper standup-reporter stuck-protocol vaadin-mentor copilot-bridge brainstorm task-planner code-cartographer)
 
 case "${1:-}" in
   claude)

@@ -56,6 +56,9 @@ message). Any blank = mark `UNKNOWN` → route to Step 4 (requirements gap) or
 Identify with the user, or via repo/wiki search where available: services/classes
 touched · **the nearest existing precedent to imitate** (always look first — the
 nearest existing pattern is worth more than any generated code) · what could break.
+Check `.agent/knowledge/codemaps/` first — if the touched area is unmapped and the
+blast radius is unclear, a `code-cartographer` session on that one area pays for
+itself immediately.
 
 ### Step 4 — Optional research sweep (2–5 min, skip silently if not useful)
 

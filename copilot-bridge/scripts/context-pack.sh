@@ -26,6 +26,12 @@ mkdir -p .agent
     echo
   fi
 
+  if [ -f .agent/knowledge/codemaps/SYSTEM-MAP.md ]; then
+    echo "## System map (cross-repo)"
+    cat .agent/knowledge/codemaps/SYSTEM-MAP.md
+    echo
+  fi
+
   latest_brief=$(ls -1 .agent/briefs/*.md 2>/dev/null | sort | tail -1 || true)
   if [ -n "${latest_brief:-}" ]; then
     echo "## Current task — ${latest_brief}"

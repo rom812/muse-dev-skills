@@ -36,7 +36,8 @@ raw code goes in only for the files under discussion.
 - The work repo path (where `.agent/` lives) and the files under discussion.
 - The standing documents: `.agent/PROJECT-BRIEF.md` (bootstrap it once if missing —
   paste the repo tree into Copilot, co-write one page), the current feature brief,
-  the latest impl-log.
+  the latest impl-log, and — for cross-repo questions — the `code-cartographer` maps
+  (`SYSTEM-MAP.md` is auto-included by the pack script when present).
 - One-time: confirmation the Copilot is the enterprise/work-account variant before any
   source code is pasted.
 

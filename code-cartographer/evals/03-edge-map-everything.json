@@ -1,0 +1,12 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "edge-map-everything",
+  "skill": "code-cartographer",
+  "query": "map all five repos completely so I understand the whole system",
+  "files": [],
+  "expected_behavior": [
+    "Refuses the boil-the-ocean request",
+    "Offers the unmapped areas as options and maps only the one blocking the current task"
+  ],
+  "should_NOT_trigger": false
+}

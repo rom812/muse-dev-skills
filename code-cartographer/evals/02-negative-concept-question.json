@@ -1,0 +1,11 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-concept-question",
+  "skill": "code-cartographer",
+  "query": "what IS a topology link conceptually? I don't get the domain",
+  "files": [],
+  "expected_behavior": [
+    "Routes to domain-tutor \u2014 concept teaching, not location/structure mapping"
+  ],
+  "should_NOT_trigger": true
+}

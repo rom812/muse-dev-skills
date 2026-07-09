@@ -26,6 +26,7 @@ The system attacks four problems at once:
 | **[standup-reporter](standup-reporter/)** | Turn your logs into crisp updates for your boss: done / in progress / blockers-with-options. | Daily + Friday |
 | **[stuck-protocol](stuck-protocol/)** | Escalation ladder for being stuck: timeboxed attempts with a documented trail → well-formed question with a best guess. Plus question-slot and parking-lot habits. | The moment you feel lost |
 | **[copilot-bridge](copilot-bridge/)** | Use the unlimited chat-only strong model as the planning brain: context packs instead of raw-code pastes, stateless sessions, handoff prompts to Windsurf. Includes `context-pack.sh`. | Every Copilot session |
+| **[code-cartographer](code-cartographer/)** | Living maps of a multi-repo system: CODEMAP per repo + cross-repo SYSTEM-MAP with anchored edges. Incremental, free-recon-first, one area per session. | "Where does X live?" across repos |
 
 **The master loop that ties them together: [WORKFLOW.md](WORKFLOW.md).** Read it first.
 **How to run each skill well (invocations, examples, common mistakes): [GUIDE.md](GUIDE.md).**

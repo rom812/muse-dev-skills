@@ -1,0 +1,14 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-cross-repo-question",
+  "skill": "code-cartographer",
+  "query": "where do topology events get consumed after the gateway publishes them? I have 5 repos and no idea",
+  "files": [],
+  "expected_behavior": [
+    "Scopes to ONE area via interactive options before mapping anything",
+    "Runs free recon (tree/manifests/entry-point grep) before any AI inference",
+    "Records purpose lines in the user's own words with \u26a0 on inferences",
+    "Adds cross-repo edges to SYSTEM-MAP.md only with a code anchor"
+  ],
+  "should_NOT_trigger": false
+}

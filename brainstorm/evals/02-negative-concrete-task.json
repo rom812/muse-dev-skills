@@ -2,7 +2,7 @@
   "$schema": "skill-eval/v1",
   "name": "negative-concrete-task",
   "skill": "brainstorm",
-  "query": "Danny asked me to add a link-down trigger, same pattern as link-deleted",
+  "query": "my boss asked me to add a link-down trigger, same pattern as link-deleted",
   "files": [],
   "expected_behavior": [
     "Routes to feature-brief \u2014 the task is concrete, no approach exploration needed"

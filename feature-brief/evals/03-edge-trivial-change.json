@@ -2,7 +2,7 @@
   "$schema": "skill-eval/v1",
   "name": "edge-trivial-change",
   "skill": "feature-brief",
-  "query": "Danny asked me to rename a config property in application.yml",
+  "query": "my boss asked me to rename a config property in application.yml",
   "files": [],
   "expected_behavior": [
     "States it is skipping the brief because the change is trivial mechanical",

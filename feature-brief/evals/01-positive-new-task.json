@@ -2,7 +2,7 @@
   "$schema": "skill-eval/v1",
   "name": "positive-new-task",
   "skill": "feature-brief",
-  "query": "Danny just sent me: 'we want the bot to also handle when a link goes down, same like the delete thing you did'",
+  "query": "my boss just sent me: 'we want the bot to also handle when a link goes down, same like the delete thing you did'",
   "files": [],
   "expected_behavior": [
     "Captures the task verbatim before anything else",

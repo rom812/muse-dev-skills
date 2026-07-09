@@ -2,7 +2,7 @@
   "$schema": "skill-eval/v1",
   "name": "negative-new-task",
   "skill": "domain-tutor",
-  "query": "Danny gave me a new feature to implement for topology reports",
+  "query": "my boss gave me a new feature to implement for topology reports",
   "files": [],
   "expected_behavior": [
     "Routes to feature-brief \u2014 this is a task, not a concept to learn"

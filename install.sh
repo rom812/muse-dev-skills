@@ -28,6 +28,9 @@ case "${1:-}" in
        "$repo/.agent/reference/"
     cp copilot-bridge/scripts/context-pack.sh "$repo/.agent/"
     chmod +x "$repo/.agent/context-pack.sh"
+    # Copilot custom-agent templates — refined in-place at work (see agents/README.md)
+    mkdir -p "$repo/.agent/reference/copilot-agents"
+    cp copilot-bridge/agents/*.md "$repo/.agent/reference/copilot-agents/"
     if [ -d "$repo/.git" ] && ! grep -q '^\.agent/$' "$repo/.git/info/exclude" 2>/dev/null; then
       echo ".agent/" >> "$repo/.git/info/exclude"
       echo "Added .agent/ to $repo/.git/info/exclude (local-only ignore)."

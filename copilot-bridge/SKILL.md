@@ -83,6 +83,21 @@ knowledge notes.
 - The paper trail (briefs, logs, decision records) IS the bridge's memory — a system
   that lapses there starves the pack.
 
+## Custom agents (persistent system prompts)
+
+`agents/` holds six deployable system prompts for Copilot custom agents — one per
+recurring job: design-partner (approaches + boss questions + red-teaming design
+docs), prompt-smith (plan step → one surgical Windsurf prompt), diff-reviewer,
+code-explainer (explanations + draft /trace chains), bug-hypothesizer (anti-fix-loop
+root-causing), comms-officer (senior-shaped messages). Deployment flow: the
+installer ships the templates to the work repo's `.agent/reference/copilot-agents/`;
+the in-repo coding agent refines each per its REFINE-ME section (filling real stack,
+conventions, pitfalls, glossary from the codebase) into `<name>.refined.md`; the
+refined prompt is pasted into the Copilot agent's instructions field. **Refined
+copies contain internal details — they stay in `.agent/` and are never committed to
+this public repo.** A custom agent replaces the per-session protocol paste, not the
+context pack: sessions still open with the pack.
+
 ## Division of labor (the full triangle)
 
 **Copilot GPT (unlimited, no repo):** planning, architecture options, explaining
@@ -102,6 +117,8 @@ domain concepts abstractly, skill/workflow maintenance, career strategy.
 
 - `assets/copilot-session-prompts.md` — the six prompts: opener, planning, explain,
   diff review, handoff, distillation.
+- `agents/*.md` — six Copilot custom-agent system-prompt templates with REFINE-ME
+  sections for the in-repo agent (see `agents/README.md` for the deployment flow).
 
 ## Scripts
 

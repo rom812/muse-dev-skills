@@ -12,12 +12,16 @@ SKILLS=(feature-brief domain-tutor impl-log explain-before-merge spring-ai-mento
 case "${1:-}" in
   claude)
     mkdir -p ~/.claude/skills
-    for s in "${SKILLS[@]}"; do cp -r "$s" ~/.claude/skills/; done
-    echo "Installed ${#SKILLS[@]} skills to ~/.claude/skills/ — invoke with /feature-brief etc."
+    # remove previous copies first so files renamed/deleted upstream don't linger
+    for s in "${SKILLS[@]}"; do rm -rf ~/.claude/skills/"$s"; cp -r "$s" ~/.claude/skills/; done
+    echo "Installed ${#SKILLS[@]} skills to ~/.claude/skills/ (old copies replaced)."
     ;;
   windsurf)
     repo="${2:?usage: ./install.sh windsurf <path-to-work-repo>}"
     mkdir -p "$repo/.windsurf/workflows" "$repo/.windsurf/rules" "$repo/.agent/reference"
+    # these two dirs are fully managed by this installer — wipe stale *.md so
+    # renamed/removed workflows don't survive as ghost slash-commands
+    rm -f "$repo/.windsurf/workflows"/*.md "$repo/.windsurf/rules"/*.md
     cp windsurf/workflows/*.md "$repo/.windsurf/workflows/"
     cp windsurf/rules/*.md     "$repo/.windsurf/rules/"
     # pattern references — readable by Cascade as workspace files (see ai-discipline rule)
@@ -29,7 +33,9 @@ case "${1:-}" in
     cp copilot-bridge/scripts/context-pack.sh "$repo/.agent/"
     chmod +x "$repo/.agent/context-pack.sh"
     # Copilot custom-agent templates — refined in-place at work (see agents/README.md)
+    # refresh templates only; NEVER touch *.refined.md (work-side refinements)
     mkdir -p "$repo/.agent/reference/copilot-agents"
+    find "$repo/.agent/reference/copilot-agents" -maxdepth 1 -name '*.md' ! -name '*.refined.md' -delete
     cp copilot-bridge/agents/*.md "$repo/.agent/reference/copilot-agents/"
     if [ -d "$repo/.git" ] && ! grep -q '^\.agent/$' "$repo/.git/info/exclude" 2>/dev/null; then
       echo ".agent/" >> "$repo/.git/info/exclude"

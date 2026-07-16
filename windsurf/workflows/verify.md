@@ -5,6 +5,8 @@ description: Verification gate before committing AI-generated code — explain, 
 # /verify — Explain Before Merge
 
 Rule: if I can't explain a line, I don't commit it. Run the gates in order.
+Use before every commit of AI-assisted code and after any /log entry marked `⚠ magic`.
+Not for recording what happened (→ /log) or tracing an unfamiliar flow (→ /trace first).
 
 1. **Line accountability.** Walk the diff hunk by hunk. For each, I state in one sentence
    what it does and why. If I can't: explain it to me, then make me restate it in my own
@@ -37,5 +39,5 @@ Rule: if I can't explain a line, I don't commit it. Run the gates in order.
    What (1-2 sentences) / Why (from brief) / How (3 bullets incl. which precedent it
    follows) / How I tested (checked boxes, concrete) / Notes for reviewer (the one spot
    deserving extra eyes, stated honestly).
-6. Update the impl log at `.agent/design-logs/NNN-*.md`: mark verified entries
+7. Update the impl log at `.agent/design-logs/NNN-*.md` (run /log): mark verified entries
    `understood`, log any fix cycle (what broke / root cause / which assumption was wrong).

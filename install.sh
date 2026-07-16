@@ -42,7 +42,7 @@ case "${1:-}" in
       echo "Added .agent/ to $repo/.git/info/exclude (local-only ignore)."
     fi
     echo "Installed workflows+rules into $repo/.windsurf/, references+context-pack.sh into $repo/.agent/."
-    echo "Invoke with /brief, /verify, /log, /tutor, /standup, /stuck."
+    echo "Invoke with /brainstorm, /brief, /plan, /tutor, /trace, /map, /verify, /log, /standup, /stuck."
     ;;
   windsurf-global)
     mkdir -p ~/.codeium/windsurf/global_workflows

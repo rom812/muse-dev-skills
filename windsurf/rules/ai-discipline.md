@@ -4,6 +4,12 @@ trigger: always_on
 
 # AI Discipline Rules
 
+- Workflows never run automatically in Cascade — so when my request matches one,
+  point me to it instead of improvising the process ad hoc: new task → /brief ·
+  vague idea → /brainstorm · multi-file plan → /plan · about to commit AI code →
+  /verify · just generated code / something broke / shipped → /log · "what happens
+  when X?" → /trace · "where does X live?" → /map · concept I can't explain →
+  /tutor · stuck past a timebox → /stuck · status update → /standup.
 - Whenever you need input from me, batch ALL questions into ONE message and present
   them as suggested responses / interactive multi-choice options (always include an
   "other" option). Never end a turn with an open free-text question when options are

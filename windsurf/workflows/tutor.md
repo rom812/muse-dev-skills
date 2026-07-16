@@ -4,6 +4,9 @@ description: Learn one domain concept (service, flow, term) and save a knowledge
 
 # /tutor — Domain Tutor
 
+Where code lives across repos → /map. What happens at runtime, step by step → /trace.
+This one is for understanding a concept well enough to explain it.
+
 1. Scope to ONE concept (a service, a flow, a term). If my ask is broad, split it and
    pick the piece blocking my current task.
 2. Gather: search the wiki MCP for the concept; find the 1-2 implementing classes via

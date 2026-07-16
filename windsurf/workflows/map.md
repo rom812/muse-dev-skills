@@ -5,6 +5,7 @@ description: Map one repo area into the living CODEMAP + cross-repo SYSTEM-MAP (
 # /map — Code Cartographer
 
 Maps live in .agent/knowledge/codemaps/ (CODEMAP-<repo>.md per repo + SYSTEM-MAP.md).
+Runtime behavior of ONE flow → /trace. Learning a domain concept → /tutor.
 Prerequisite (one-time): all repos added to this workspace via File → Add Folder to
 Workspace, so retrieval spans the whole system.
 

@@ -5,6 +5,8 @@ description: Turn a new task into a one-page feature brief with smart questions 
 # /brief — Feature Brief (understand before coding)
 
 Hard rule: no implementation until this brief is filled.
+Vague idea with no committed approach → /brainstorm first. Multi-file/multi-day
+step scheduling comes AFTER this brief → /plan.
 Ask me everything via suggested-responses multi-choice, batched into one message per step.
 
 1. Ask me to paste the raw task exactly as given (Jira/chat). Record it verbatim.

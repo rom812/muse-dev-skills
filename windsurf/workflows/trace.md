@@ -6,6 +6,7 @@ description: Trace one runtime flow into a verified call-chain note — entry po
 
 Trace notes live in `.agent/knowledge/traces/<flow-name>.md` (name-keyed kebab-case,
 flows are knowledge) + `INDEX.md` (one line per trace). Time-box: 30-45 min, ONE flow.
+For static structure / where-things-live → /map. For learning a concept → /tutor.
 Cross-repo prerequisite (one-time, same as /map): all repos added to this workspace
 via File → Add Folder to Workspace — otherwise repo-hops are invisible to retrieval.
 

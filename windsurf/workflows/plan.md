@@ -16,7 +16,8 @@ Ask me everything via suggested-responses multi-choice, batched per decision.
    - Precedent: the file/pattern to imitate (mandatory where one exists)
    - Prove it: the test/check that shows the step worked
    Order steps so the build stays green after every one.
-3. Tag each step: [GEN] worth an AI generation (prepare via the one-shot template) ·
+3. Tag each step: [GEN] worth an AI generation (prepare via the one-shot template in
+   `.agent/reference/weak-model-playbook.md`) ·
    [HAND] faster by hand / copy-precedent · [FREE] config/wiring/renames.
    This tagging is where my credit budget gets decided.
 4. Risks: top 2-3 with mitigations + what to check before merge + rollback note.

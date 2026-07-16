@@ -6,6 +6,7 @@ description: Record an implementation-log entry — what AI generated, what I ve
 
 Target file: `.agent/design-logs/NNN-<kebab-task-name>.md` — impl logs live in the SAME
 folder and numbering sequence as the design logs. Keep entries telegraphic — 2 minutes max.
+This records events; reporting status to humans is /standup's job (it reads these logs).
 
 **On creation (log doesn't exist yet):**
 - NNN = next sequential number: read `.agent/design-logs/INDEX.md` + existing filenames,

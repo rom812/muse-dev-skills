@@ -26,23 +26,27 @@ STEPS
 2. chmod +x install.sh
 3. ./install.sh windsurf WORK_REPO   (use the absolute path)
 
-VERIFY — show me the raw output of all four:
+VERIFY — show me the raw output of all five:
 4. ls WORK_REPO/.windsurf/workflows/
 5. ls WORK_REPO/.windsurf/rules/
 6. ls WORK_REPO/.agent/reference/ && ls WORK_REPO/.agent/context-pack.sh
-7. cat WORK_REPO/.git/info/exclude
+7. ls WORK_REPO/.agent/reference/copilot-agents/
+8. cat WORK_REPO/.git/info/exclude
 
 EXPECTED
-- 6 workflow files: brief.md, log.md, standup.md, stuck.md, tutor.md, verify.md
+- 10 workflow files: brainstorm.md, brief.md, log.md, map.md, plan.md, standup.md,
+  stuck.md, trace.md, tutor.md, verify.md
 - 1 rules file: ai-discipline.md
 - 4 reference files (spring-ai-patterns, vaadin-patterns, weak-model-playbook,
   copilot-session-prompts) + context-pack.sh in .agent/
+- copilot-agents/: 6 agent templates + README.md; any *.refined.md files were
+  NOT touched (they are work-side refinements)
 - ".agent/" present in .git/info/exclude
 
 Report PASS or list every mismatch. Do nothing else.
 ```
 
-After PASS: open the Customizations panel → Workflows, confirm the six commands
+After PASS: open the Customizations panel → Workflows, confirm the ten commands
 appear, then smoke-test with `/brief`.
 
 > Why this prompt is shaped this way (reusable pattern for any Cascade chore):

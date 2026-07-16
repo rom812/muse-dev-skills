@@ -1,6 +1,6 @@
 ---
 name: domain-tutor
-description: 'Learn one unfamiliar domain concept (a service, subsystem, protocol, or flow) and produce a permanent knowledge note in the user''s own words, with a diagram and self-quiz. Use when the user says they don''t understand a service, concept, or how something works in their product domain.'
+description: 'Learn one unfamiliar domain concept (a service, subsystem, protocol, or domain term) and produce a permanent knowledge note in the user''s own words, with a diagram and self-quiz. Use when the user asks what a service, subsystem, or domain term IS or WHY it exists, or says they don''t understand one, in their product domain. Not for step-by-step runtime tracing — that is flow-tracer.'
 allowed-tools: Read, Write, Edit, Grep, Glob, AskUserQuestion, WebSearch, WebFetch, mcp__tavily__tavily_search, mcp__exa__exa_search
 ---
 
@@ -22,6 +22,9 @@ code — it's the *domain* (topology, network elements, services, events, jobs).
 - Requirements/scope confusion about a specific task → that's `feature-brief` Step 5.
 - Framework API questions with a pattern answer → `spring-ai-mentor` / `vaadin-mentor`.
 - Being stuck on an error → `stuck-protocol`.
+- "What actually happens when X" — step-by-step runtime behavior → `flow-tracer`
+  (that produces a trace note; a tutor session may cite an existing trace, not create one).
+- Where code lives / repo and module structure → `code-cartographer`.
 
 ## Required inputs
 

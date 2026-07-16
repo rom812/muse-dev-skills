@@ -23,6 +23,8 @@ by process, not courage: a timebox decides *when* to ask, the evidence trail dec
 
 - Not understanding the *task* → `feature-brief` (requirements gap).
 - Not understanding a *domain concept* → `domain-tutor`.
+- Stuck tracing a runtime flow by reading (DI magic, proxies, async hops) →
+  `flow-tracer` — its debugger rule replaces static reading past the 10-minute budget.
 - A failed AI generation → `token-sniper` Step 4 (evidence, then one surgical retry).
 
 ## Required inputs

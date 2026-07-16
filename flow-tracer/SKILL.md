@@ -1,6 +1,6 @@
 ---
 name: flow-tracer
-description: 'Trace ONE runtime flow through the code into a verified call-chain note: entry point → real Class.method steps → data shapes → async/repo boundaries, each step marked verified or inferred. Use for any "what actually happens when X" question, when a blast radius touches a flow you cannot narrate, or before touching code whose path you have never followed.'
+description: 'Trace ONE runtime flow through the code into a verified call-chain note: entry point → real Class.method steps → data shapes → async/repo boundaries, each step marked verified or inferred. Use for any "what actually happens when X" question, when a blast radius touches a flow you cannot narrate, or before touching code whose path you have never followed. Not for "what is X / why does it exist" concept questions — that is domain-tutor.'
 allowed-tools: Read, Grep, Glob, Bash, Write, Edit, AskUserQuestion, mcp__serena__find_symbol, mcp__serena__find_referencing_symbols, mcp__octocode__localSearchCode, mcp__octocode__lspGotoDefinition, mcp__octocode__lspCallHierarchy
 ---
 

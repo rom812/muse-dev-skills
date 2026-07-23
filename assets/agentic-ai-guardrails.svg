@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Harnessing agentic AI for difficult tasks: five practices that keep AI grounded: skills, prompt engineering, rules, relevant context, documentation">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Harnessing agentic AI for difficult tasks: the challenge of learning a new domain as a new hire, and five practices that keep AI grounded">
   <defs>
     <linearGradient id="gradTitle" x1="360" y1="0" x2="680" y2="0" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#FF007F"/>
@@ -17,7 +17,7 @@
 
   <rect width="1600" height="900" fill="#FFFFFF"/>
 
-  <!-- ============ Official Ribbon logo ============ -->
+  <!-- Official Ribbon logo -->
   <svg x="56" y="28" width="248" height="102" viewBox="0 0 1222 502">
 <style type="text/css">
 	.st0{fill:#4B4B4B;}
@@ -158,87 +158,85 @@
 </g>
 </svg>
 
-  <!-- ============ Title ============ -->
-  <text class="head" x="80" y="192" font-size="42" font-weight="700" fill="#4B4B4B">Harnessing <tspan fill="url(#gradTitle)">Agentic AI</tspan> for Difficult Tasks</text>
-  <text class="body" x="80" y="230" font-size="17" fill="#828282">Five practices that keep the AI grounded and every answer trustworthy.</text>
+  <!-- Title -->
+  <text class="head" x="80" y="190" font-size="42" font-weight="700" fill="#4B4B4B">Harnessing <tspan fill="url(#gradTitle)">Agentic AI</tspan> for Difficult Tasks</text>
 
-  <!-- ============ Card 1 · Skills ============ -->
-  <rect x="80" y="272" width="268" height="260" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
-  <rect x="80" y="272" width="268" height="6" rx="3" fill="#FF007F"/>
-  <g transform="translate(102,300)" stroke="#FF007F" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Challenge band -->
+  <rect x="80" y="224" width="1440" height="58" rx="10" fill="#FDF2F8" stroke="#F5CFE6"/>
+  <text class="head" x="108" y="259" font-size="12.5" font-weight="700" letter-spacing="2" fill="#E90575">THE CHALLENGE</text>
+  <text class="body" x="290" y="259" font-size="15.5" fill="#4B4B4B">Learning a new domain as a new hire without being misled by AI hallucinations.</text>
+
+  <!-- Card 1 Skills -->
+  <rect x="80" y="316" width="268" height="228" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
+  <rect x="80" y="316" width="268" height="6" rx="3" fill="#FF007F"/>
+  <g transform="translate(102,344)" stroke="#FF007F" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path d="M22,8 C16,3 6,3 2,6 L2,32 C6,29 16,29 22,34"/>
     <path d="M22,8 C28,3 38,3 42,6 L42,32 C38,29 28,29 22,34"/>
     <line x1="22" y1="8" x2="22" y2="34"/>
   </g>
-  <text class="head" x="102" y="384" font-size="17" font-weight="700" fill="#4B4B4B">Skills</text>
-  <text class="body" x="102" y="414" font-size="13" fill="#828282">Codified step-by-step playbooks</text>
-  <text class="body" x="102" y="433" font-size="13" fill="#828282">the AI must follow. A guidebook</text>
-  <text class="body" x="102" y="452" font-size="13" fill="#828282">that keeps its work grounded and</text>
-  <text class="body" x="102" y="471" font-size="13" fill="#828282">shuts the door on hallucinations.</text>
+  <text class="head" x="102" y="420" font-size="17" font-weight="700" fill="#4B4B4B">Skills</text>
+  <text class="body" x="102" y="450" font-size="13" fill="#828282">Playbooks the AI follows like a</text>
+  <text class="body" x="102" y="469" font-size="13" fill="#828282">guidebook. Keeps every answer</text>
+  <text class="body" x="102" y="488" font-size="13" fill="#828282">grounded.</text>
 
-  <!-- ============ Card 2 · Prompt engineering ============ -->
-  <rect x="373" y="272" width="268" height="260" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
-  <rect x="373" y="272" width="268" height="6" rx="3" fill="#E90575"/>
-  <g transform="translate(395,300)" stroke="#E90575" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Card 2 Prompt engineering -->
+  <rect x="373" y="316" width="268" height="228" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
+  <rect x="373" y="316" width="268" height="6" rx="3" fill="#E90575"/>
+  <g transform="translate(395,344)" stroke="#E90575" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <rect x="2" y="5" width="40" height="32" rx="5"/>
     <polyline points="10,15 17,21 10,27"/>
     <line x1="22" y1="28" x2="32" y2="28"/>
   </g>
-  <text class="head" x="395" y="384" font-size="17" font-weight="700" fill="#4B4B4B">Prompt engineering</text>
-  <text class="body" x="395" y="414" font-size="13" fill="#828282">Structured asks with clear</text>
-  <text class="body" x="395" y="433" font-size="13" fill="#828282">success criteria. For example:</text>
-  <rect x="395" y="447" width="216" height="26" rx="13" fill="#FDEFF6" stroke="#E90575" stroke-width="1"/>
-  <text class="mono" x="407" y="464" font-size="10.5" fill="#4B4B4B">"Cite a source for every claim."</text>
-  <rect x="395" y="481" width="216" height="26" rx="13" fill="#FDEFF6" stroke="#E90575" stroke-width="1"/>
-  <text class="mono" x="407" y="498" font-size="10.5" fill="#4B4B4B">"If unsure, answer 'unknown'."</text>
+  <text class="head" x="395" y="420" font-size="17" font-weight="700" fill="#4B4B4B">Prompt engineering</text>
+  <text class="body" x="395" y="450" font-size="13" fill="#828282">Structured asks. For example:</text>
+  <rect x="395" y="464" width="216" height="26" rx="13" fill="#FDEFF6" stroke="#E90575" stroke-width="1"/>
+  <text class="mono" x="407" y="481" font-size="10.5" fill="#4B4B4B">"Cite a source for every claim."</text>
+  <rect x="395" y="498" width="216" height="26" rx="13" fill="#FDEFF6" stroke="#E90575" stroke-width="1"/>
+  <text class="mono" x="407" y="515" font-size="10.5" fill="#4B4B4B">"If unsure, answer 'unknown'."</text>
 
-  <!-- ============ Card 3 · Rules ============ -->
-  <rect x="666" y="272" width="268" height="260" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
-  <rect x="666" y="272" width="268" height="6" rx="3" fill="#C0059E"/>
-  <g transform="translate(688,300)" stroke="#C0059E" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Card 3 Rules -->
+  <rect x="666" y="316" width="268" height="228" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
+  <rect x="666" y="316" width="268" height="6" rx="3" fill="#C0059E"/>
+  <g transform="translate(688,344)" stroke="#C0059E" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path d="M21,2 L37,8 V19 C37,29 30,36 21,40 C12,36 5,29 5,19 V8 Z"/>
     <polyline points="13,20 19,26 29,14"/>
   </g>
-  <text class="head" x="688" y="384" font-size="17" font-weight="700" fill="#4B4B4B">Rules</text>
-  <text class="body" x="688" y="414" font-size="13" fill="#828282">Standing boundaries the AI</text>
-  <text class="body" x="688" y="433" font-size="13" fill="#828282">always obeys: follow our</text>
-  <text class="body" x="688" y="452" font-size="13" fill="#828282">standards, never invent facts,</text>
-  <text class="body" x="688" y="471" font-size="13" fill="#828282">verify before asserting.</text>
+  <text class="head" x="688" y="420" font-size="17" font-weight="700" fill="#4B4B4B">Rules</text>
+  <text class="body" x="688" y="450" font-size="13" fill="#828282">Boundaries the AI always obeys:</text>
+  <text class="body" x="688" y="469" font-size="13" fill="#828282">never invent facts, verify</text>
+  <text class="body" x="688" y="488" font-size="13" fill="#828282">before asserting.</text>
 
-  <!-- ============ Card 4 · Relevant context ============ -->
-  <rect x="959" y="272" width="268" height="260" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
-  <rect x="959" y="272" width="268" height="6" rx="3" fill="#9F02AB"/>
-  <g transform="translate(981,300)" stroke="#9F02AB" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Card 4 Relevant context -->
+  <rect x="959" y="316" width="268" height="228" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
+  <rect x="959" y="316" width="268" height="6" rx="3" fill="#9F02AB"/>
+  <g transform="translate(981,344)" stroke="#9F02AB" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="21" cy="21" r="17"/>
     <circle cx="21" cy="21" r="9"/>
     <circle cx="21" cy="21" r="2.5" fill="#9F02AB" stroke="none"/>
   </g>
-  <text class="head" x="981" y="384" font-size="17" font-weight="700" fill="#4B4B4B">Relevant context</text>
-  <text class="body" x="981" y="414" font-size="13" fill="#828282">Only the files and facts that</text>
-  <text class="body" x="981" y="433" font-size="13" fill="#828282">matter are fed in, so answers</text>
-  <text class="body" x="981" y="452" font-size="13" fill="#828282">come from real sources,</text>
-  <text class="body" x="981" y="471" font-size="13" fill="#828282">not guesses.</text>
+  <text class="head" x="981" y="420" font-size="17" font-weight="700" fill="#4B4B4B">Relevant context</text>
+  <text class="body" x="981" y="450" font-size="13" fill="#828282">Only the right files and facts</text>
+  <text class="body" x="981" y="469" font-size="13" fill="#828282">go in. Answers come from real</text>
+  <text class="body" x="981" y="488" font-size="13" fill="#828282">sources, not guesses.</text>
 
-  <!-- ============ Card 5 · Documentation ============ -->
-  <rect x="1252" y="272" width="268" height="260" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
-  <rect x="1252" y="272" width="268" height="6" rx="3" fill="#7E00B9"/>
-  <g transform="translate(1274,300)" stroke="#7E00B9" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Card 5 Documentation -->
+  <rect x="1252" y="316" width="268" height="228" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
+  <rect x="1252" y="316" width="268" height="6" rx="3" fill="#7E00B9"/>
+  <g transform="translate(1274,344)" stroke="#7E00B9" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <rect x="9" y="2" width="26" height="32" rx="3"/>
     <rect x="2" y="9" width="26" height="32" rx="3" fill="#FFFFFF"/>
     <line x1="9" y1="20" x2="21" y2="20"/>
     <line x1="9" y1="27" x2="21" y2="27"/>
     <line x1="9" y1="34" x2="16" y2="34"/>
   </g>
-  <text class="head" x="1274" y="384" font-size="17" font-weight="700" fill="#4B4B4B">Documentation</text>
-  <text class="body" x="1274" y="414" font-size="13" fill="#828282">Verified results are saved and</text>
-  <text class="body" x="1274" y="433" font-size="13" fill="#828282">fed back to the AI. Every task</text>
-  <text class="body" x="1274" y="452" font-size="13" fill="#828282">makes the next one more</text>
-  <text class="body" x="1274" y="471" font-size="13" fill="#828282">grounded.</text>
+  <text class="head" x="1274" y="420" font-size="17" font-weight="700" fill="#4B4B4B">Documentation</text>
+  <text class="body" x="1274" y="450" font-size="13" fill="#828282">Verified results are saved and</text>
+  <text class="body" x="1274" y="469" font-size="13" fill="#828282">reused. Every task grounds</text>
+  <text class="body" x="1274" y="488" font-size="13" fill="#828282">the next one.</text>
 
-  <!-- ============ Takeaway ============ -->
-  <rect x="80" y="628" width="1440" height="92" rx="12" fill="url(#gradBar)"/>
-  <text class="head" x="800" y="666" font-size="25" font-weight="700" fill="#FFFFFF" text-anchor="middle">Grounded agentic AI: difficult tasks get faster and answers stay trustworthy.</text>
-  <text class="body" x="800" y="698" font-size="15" fill="#FFFFFF" opacity="0.85" text-anchor="middle">Every answer is built on real, verified knowledge, never on a guess.</text>
+  <!-- Takeaway -->
+  <rect x="80" y="608" width="1440" height="70" rx="12" fill="url(#gradBar)"/>
+  <text class="head" x="800" y="651" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle">Grounded AI: difficult tasks get faster and every answer stays trustworthy.</text>
 
-  <text class="body" x="800" y="800" font-size="12" letter-spacing="3" fill="#B2B2B2" text-anchor="middle">AGENTIC AI · WORKING PRACTICES</text>
+  <text class="body" x="800" y="760" font-size="12" letter-spacing="3" fill="#B2B2B2" text-anchor="middle">AGENTIC AI &#183; WORKING PRACTICES</text>
 </svg>

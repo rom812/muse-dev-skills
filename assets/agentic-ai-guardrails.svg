@@ -1,166 +1,121 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1520" viewBox="0 0 1200 1520" role="img" aria-label="Infographic: Agentic AI without the hallucinations — prompt engineering, skills, and documentation as guardrails for frustrating engineering tasks">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Harnessing agentic AI for difficult tasks — five practices that keep AI grounded: skills, prompt engineering, rules, relevant context, documentation">
+  <defs>
+    <linearGradient id="gradRing" x1="0" y1="0" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF007F"/>
+      <stop offset="1" stop-color="#7E00B9"/>
+    </linearGradient>
+    <linearGradient id="gradTitle" x1="360" y1="0" x2="680" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF007F"/>
+      <stop offset="1" stop-color="#7E00B9"/>
+    </linearGradient>
+    <linearGradient id="gradBar" x1="80" y1="0" x2="1520" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF007F"/>
+      <stop offset="1" stop-color="#7E00B9"/>
+    </linearGradient>
+  </defs>
   <style>
-    .display { font-family: "Avenir Next", Avenir, Futura, "Segoe UI", sans-serif; }
-    .body    { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
-    .mono    { font-family: "SF Mono", Menlo, Consolas, monospace; }
+    .head { font-family: Montserrat, "Segoe UI", Arial, Helvetica, sans-serif; }
+    .body { font-family: Roboto, Arial, Helvetica, sans-serif; }
+    .mono { font-family: "SF Mono", Menlo, Consolas, monospace; }
+    .wordmark { font-family: "Arial Rounded MT Bold", Montserrat, Arial, sans-serif; }
   </style>
 
-  <!-- ground -->
-  <rect width="1200" height="1520" fill="#EDF1F7"/>
+  <rect width="1600" height="900" fill="#FFFFFF"/>
 
-  <!-- ================= HEADER ================= -->
-  <text class="mono" x="60" y="78" font-size="13" letter-spacing="2" fill="#1E44B8">MUSE TEAM · WORKING WITH AGENTIC AI</text>
-  <text class="display" x="60" y="132" font-size="46" font-weight="700" fill="#16223A">Agentic AI, <tspan fill="#1E44B8">without</tspan> the hallucinations</text>
-  <text class="body" x="60" y="170" font-size="17" fill="#4B5A75">How I use prompt engineering, reusable skills, and living documentation to point AI at the most</text>
-  <text class="body" x="60" y="194" font-size="17" fill="#4B5A75">frustrating engineering tasks — and actually trust the answers.</text>
+  <!-- ============ Ribbon signature ============ -->
+  <g transform="translate(80,52)">
+    <g transform="rotate(0 28 28)"><ellipse cx="28" cy="13" rx="6.5" ry="12" fill="none" stroke="#BE0398" stroke-width="4.5"/></g>
+    <g transform="rotate(45 28 28)"><ellipse cx="28" cy="13" rx="6.5" ry="12" fill="none" stroke="#8C02B1" stroke-width="4.5"/></g>
+    <g transform="rotate(90 28 28)"><ellipse cx="28" cy="13" rx="6.5" ry="12" fill="none" stroke="#7E00B9" stroke-width="4.5"/></g>
+    <g transform="rotate(135 28 28)"><ellipse cx="28" cy="13" rx="6.5" ry="12" fill="none" stroke="#8C02B1" stroke-width="4.5"/></g>
+    <g transform="rotate(180 28 28)"><ellipse cx="28" cy="13" rx="6.5" ry="12" fill="none" stroke="#BE0398" stroke-width="4.5"/></g>
+    <g transform="rotate(225 28 28)"><ellipse cx="28" cy="13" rx="6.5" ry="12" fill="none" stroke="#EF0187" stroke-width="4.5"/></g>
+    <g transform="rotate(270 28 28)"><ellipse cx="28" cy="13" rx="6.5" ry="12" fill="none" stroke="#FF007F" stroke-width="4.5"/></g>
+    <g transform="rotate(315 28 28)"><ellipse cx="28" cy="13" rx="6.5" ry="12" fill="none" stroke="#EF0187" stroke-width="4.5"/></g>
+  </g>
+  <text class="wordmark" x="152" y="98" font-size="36" fill="#4B4B4B" letter-spacing="1">ribbon</text>
 
-  <!-- ================= THE FRUSTRATING TASK ================= -->
-  <text class="mono" x="60" y="248" font-size="12" letter-spacing="2.5" fill="#4B5A75">THE FRUSTRATING TASK</text>
-  <line x1="270" y1="244" x2="1140" y2="244" stroke="#C9D3E2" stroke-width="1"/>
+  <!-- ============ Title ============ -->
+  <text class="head" x="80" y="192" font-size="42" font-weight="700" fill="#4B4B4B">Harnessing <tspan fill="url(#gradTitle)">Agentic AI</tspan> for Difficult Tasks</text>
+  <text class="body" x="80" y="230" font-size="17" fill="#828282">Five practices that keep the AI grounded — and every answer trustworthy.</text>
 
-  <text class="display" x="60" y="292" font-size="24" font-weight="600" fill="#16223A">Tracing undocumented code flows</text>
-  <rect x="628" y="268" width="512" height="34" rx="6" fill="#FFFFFF" stroke="#C9D3E2"/>
-  <text class="mono" x="644" y="290" font-size="12.5" fill="#16223A">"What actually happens when a topology notification arrives?"</text>
+  <!-- ============ Card 1 · Skills ============ -->
+  <rect x="80" y="272" width="268" height="260" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
+  <rect x="80" y="272" width="268" height="6" rx="3" fill="#FF007F"/>
+  <g transform="translate(102,300)" stroke="#FF007F" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M22,8 C16,3 6,3 2,6 L2,32 C6,29 16,29 22,34"/>
+    <path d="M22,8 C28,3 38,3 42,6 L42,32 C38,29 28,29 22,34"/>
+    <line x1="22" y1="8" x2="22" y2="34"/>
+  </g>
+  <text class="head" x="102" y="384" font-size="17" font-weight="700" fill="#4B4B4B">Skills</text>
+  <text class="body" x="102" y="414" font-size="13" fill="#828282">Codified step-by-step playbooks</text>
+  <text class="body" x="102" y="433" font-size="13" fill="#828282">the AI must follow — a guidebook</text>
+  <text class="body" x="102" y="452" font-size="13" fill="#828282">that keeps its work grounded and</text>
+  <text class="body" x="102" y="471" font-size="13" fill="#828282">shuts the door on hallucinations.</text>
 
-  <text class="body" x="60" y="320" font-size="14.5" fill="#4B5A75">The answer jumps across services, async events, and databases — and none of it is written down.</text>
-  <text class="body" x="60" y="340" font-size="14.5" fill="#4B5A75">Hours disappear into reverse-engineering, and one wrong assumption can derail a demo.</text>
+  <!-- ============ Card 2 · Prompt engineering ============ -->
+  <rect x="373" y="272" width="268" height="260" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
+  <rect x="373" y="272" width="268" height="6" rx="3" fill="#E90575"/>
+  <g transform="translate(395,300)" stroke="#E90575" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="5" width="40" height="32" rx="5"/>
+    <polyline points="10,15 17,21 10,27"/>
+    <line x1="22" y1="28" x2="32" y2="28"/>
+  </g>
+  <text class="head" x="395" y="384" font-size="17" font-weight="700" fill="#4B4B4B">Prompt engineering</text>
+  <text class="body" x="395" y="414" font-size="13" fill="#828282">Structured asks with clear</text>
+  <text class="body" x="395" y="433" font-size="13" fill="#828282">success criteria. For example:</text>
+  <rect x="395" y="447" width="216" height="26" rx="13" fill="#FDEFF6" stroke="#E90575" stroke-width="1"/>
+  <text class="mono" x="407" y="464" font-size="10.5" fill="#4B4B4B">"Cite a source for every claim."</text>
+  <rect x="395" y="481" width="216" height="26" rx="13" fill="#FDEFF6" stroke="#E90575" stroke-width="1"/>
+  <text class="mono" x="407" y="498" font-size="10.5" fill="#4B4B4B">"If unsure, answer 'unknown'."</text>
 
-  <!-- trace diagram -->
-  <rect x="60" y="364" width="1080" height="84" rx="8" fill="#FFFFFF" stroke="#C9D3E2"/>
-  <!-- node: notification -->
-  <rect x="100" y="391" width="114" height="30" rx="6" fill="#EDF1F7" stroke="#C9D3E2"/>
-  <text class="mono" x="157" y="411" font-size="12.5" fill="#16223A" text-anchor="middle">notification</text>
-  <line x1="214" y1="406" x2="336" y2="406" stroke="#4B5A75" stroke-width="2" stroke-dasharray="6 6" opacity="0.75"/>
-  <!-- node: ? service -->
-  <rect x="336" y="391" width="92" height="30" rx="6" fill="#F6EDE1" stroke="#B26A05" stroke-dasharray="5 4"/>
-  <text class="mono" x="382" y="411" font-size="12.5" fill="#B26A05" text-anchor="middle">? service</text>
-  <line x1="428" y1="406" x2="550" y2="406" stroke="#4B5A75" stroke-width="2" stroke-dasharray="6 6" opacity="0.75"/>
-  <!-- node: ? listener -->
-  <rect x="550" y="391" width="99" height="30" rx="6" fill="#F6EDE1" stroke="#B26A05" stroke-dasharray="5 4"/>
-  <text class="mono" x="599" y="411" font-size="12.5" fill="#B26A05" text-anchor="middle">? listener</text>
-  <line x1="649" y1="406" x2="771" y2="406" stroke="#4B5A75" stroke-width="2" stroke-dasharray="6 6" opacity="0.75"/>
-  <!-- node: ? async event -->
-  <rect x="771" y="391" width="122" height="30" rx="6" fill="#F6EDE1" stroke="#B26A05" stroke-dasharray="5 4"/>
-  <text class="mono" x="832" y="411" font-size="12.5" fill="#B26A05" text-anchor="middle">? async event</text>
-  <line x1="893" y1="406" x2="1015" y2="406" stroke="#4B5A75" stroke-width="2" stroke-dasharray="6 6" opacity="0.75"/>
-  <!-- node: database -->
-  <rect x="1015" y="391" width="84" height="30" rx="6" fill="#EDF1F7" stroke="#C9D3E2"/>
-  <text class="mono" x="1057" y="411" font-size="12.5" fill="#16223A" text-anchor="middle">database</text>
+  <!-- ============ Card 3 · Rules ============ -->
+  <rect x="666" y="272" width="268" height="260" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
+  <rect x="666" y="272" width="268" height="6" rx="3" fill="#C0059E"/>
+  <g transform="translate(688,300)" stroke="#C0059E" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21,2 L37,8 V19 C37,29 30,36 21,40 C12,36 5,29 5,19 V8 Z"/>
+    <polyline points="13,20 19,26 29,14"/>
+  </g>
+  <text class="head" x="688" y="384" font-size="17" font-weight="700" fill="#4B4B4B">Rules</text>
+  <text class="body" x="688" y="414" font-size="13" fill="#828282">Standing boundaries the AI</text>
+  <text class="body" x="688" y="433" font-size="13" fill="#828282">always obeys: follow our</text>
+  <text class="body" x="688" y="452" font-size="13" fill="#828282">standards, never invent facts,</text>
+  <text class="body" x="688" y="471" font-size="13" fill="#828282">verify before asserting.</text>
 
-  <text class="body" x="60" y="474" font-size="13.5" fill="#4B5A75">Every <tspan fill="#B26A05" font-weight="700">?</tspan> is an hour of manual digging — or a wrong guess.</text>
+  <!-- ============ Card 4 · Relevant context ============ -->
+  <rect x="959" y="272" width="268" height="260" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
+  <rect x="959" y="272" width="268" height="6" rx="3" fill="#9F02AB"/>
+  <g transform="translate(981,300)" stroke="#9F02AB" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="21" cy="21" r="17"/>
+    <circle cx="21" cy="21" r="9"/>
+    <circle cx="21" cy="21" r="2.5" fill="#9F02AB" stroke="none"/>
+  </g>
+  <text class="head" x="981" y="384" font-size="17" font-weight="700" fill="#4B4B4B">Relevant context</text>
+  <text class="body" x="981" y="414" font-size="13" fill="#828282">Only the files and facts that</text>
+  <text class="body" x="981" y="433" font-size="13" fill="#828282">matter are fed in — so answers</text>
+  <text class="body" x="981" y="452" font-size="13" fill="#828282">come from real sources,</text>
+  <text class="body" x="981" y="471" font-size="13" fill="#828282">not guesses.</text>
 
-  <!-- ================= THE SYSTEM ================= -->
-  <text class="mono" x="60" y="520" font-size="12" letter-spacing="2.5" fill="#4B5A75">THE SYSTEM — FOUR STEPS</text>
-  <line x1="300" y1="516" x2="1140" y2="516" stroke="#C9D3E2" stroke-width="1"/>
+  <!-- ============ Card 5 · Documentation ============ -->
+  <rect x="1252" y="272" width="268" height="260" rx="10" fill="#FFFFFF" stroke="#E6E6E6" stroke-width="1.5"/>
+  <rect x="1252" y="272" width="268" height="6" rx="3" fill="#7E00B9"/>
+  <g transform="translate(1274,300)" stroke="#7E00B9" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="9" y="2" width="26" height="32" rx="3"/>
+    <rect x="2" y="9" width="26" height="32" rx="3" fill="#FFFFFF"/>
+    <line x1="9" y1="20" x2="21" y2="20"/>
+    <line x1="9" y1="27" x2="21" y2="27"/>
+    <line x1="9" y1="34" x2="16" y2="34"/>
+  </g>
+  <text class="head" x="1274" y="384" font-size="17" font-weight="700" fill="#4B4B4B">Documentation</text>
+  <text class="body" x="1274" y="414" font-size="13" fill="#828282">Verified results are saved and</text>
+  <text class="body" x="1274" y="433" font-size="13" fill="#828282">fed back to the AI — every task</text>
+  <text class="body" x="1274" y="452" font-size="13" fill="#828282">makes the next one more</text>
+  <text class="body" x="1274" y="471" font-size="13" fill="#828282">grounded.</text>
 
-  <!-- stage 1 -->
-  <rect x="60" y="544" width="240" height="128" rx="8" fill="#FFFFFF" stroke="#C9D3E2"/>
-  <text class="mono" x="80" y="572" font-size="11" letter-spacing="1.5" fill="#1E44B8">STEP 1</text>
-  <text class="display" x="80" y="596" font-size="16.5" font-weight="600" fill="#16223A">Hard task lands</text>
-  <text class="body" x="80" y="620" font-size="12.5" fill="#4B5A75">An undocumented flow</text>
-  <text class="body" x="80" y="638" font-size="12.5" fill="#4B5A75">needs tracing, fast.</text>
-  <text class="mono" x="320" y="616" font-size="20" fill="#1E44B8" text-anchor="middle">»</text>
-  <!-- stage 2 -->
-  <rect x="340" y="544" width="240" height="128" rx="8" fill="#FFFFFF" stroke="#C9D3E2"/>
-  <text class="mono" x="360" y="572" font-size="11" letter-spacing="1.5" fill="#1E44B8">STEP 2</text>
-  <text class="display" x="360" y="596" font-size="16.5" font-weight="600" fill="#16223A">AI drafts the trace</text>
-  <text class="body" x="360" y="620" font-size="12.5" fill="#4B5A75">An agent reads the code and</text>
-  <text class="body" x="360" y="638" font-size="12.5" fill="#4B5A75">proposes the step-by-step flow.</text>
-  <text class="mono" x="600" y="616" font-size="20" fill="#1E44B8" text-anchor="middle">»</text>
-  <!-- stage 3 -->
-  <rect x="620" y="544" width="240" height="128" rx="8" fill="#FFFFFF" stroke="#C9D3E2"/>
-  <text class="mono" x="640" y="572" font-size="11" letter-spacing="1.5" fill="#1E44B8">STEP 3</text>
-  <text class="display" x="640" y="596" font-size="16.5" font-weight="600" fill="#16223A">Guardrails filter it</text>
-  <text class="body" x="640" y="620" font-size="12.5" fill="#4B5A75">Prompts, skills, and docs strip</text>
-  <text class="body" x="640" y="638" font-size="12.5" fill="#4B5A75">out anything the AI can't prove.</text>
-  <text class="mono" x="880" y="616" font-size="20" fill="#1E44B8" text-anchor="middle">»</text>
-  <!-- stage 4 -->
-  <rect x="900" y="544" width="240" height="128" rx="8" fill="#ECF0FD" stroke="#2B5CE6"/>
-  <text class="mono" x="920" y="572" font-size="11" letter-spacing="1.5" fill="#1E44B8">STEP 4</text>
-  <text class="display" x="920" y="596" font-size="16.5" font-weight="600" fill="#16223A">Verified answer</text>
-  <text class="body" x="920" y="620" font-size="12.5" fill="#4B5A75">Every step cited and checked —</text>
-  <text class="body" x="920" y="638" font-size="12.5" fill="#4B5A75">or clearly flagged as a guess.</text>
+  <!-- ============ Takeaway ============ -->
+  <rect x="80" y="628" width="1440" height="92" rx="12" fill="url(#gradBar)"/>
+  <text class="head" x="800" y="666" font-size="25" font-weight="700" fill="#FFFFFF" text-anchor="middle">Grounded agentic AI: difficult tasks get faster — and answers stay trustworthy.</text>
+  <text class="body" x="800" y="698" font-size="15" fill="#FFFFFF" opacity="0.85" text-anchor="middle">Every answer is built on real, verified knowledge — never on a guess.</text>
 
-  <!-- ================= THE THREE GUARDRAILS ================= -->
-  <text class="mono" x="60" y="716" font-size="12" letter-spacing="2.5" fill="#4B5A75">THE THREE GUARDRAILS</text>
-  <line x1="270" y1="712" x2="1140" y2="712" stroke="#C9D3E2" stroke-width="1"/>
-
-  <!-- card 1: prompt engineering -->
-  <rect x="60" y="740" width="340" height="300" rx="8" fill="#FFFFFF" stroke="#C9D3E2"/>
-  <rect x="84" y="764" width="40" height="40" rx="6" fill="#ECF0FD"/>
-  <text class="mono" x="104" y="790" font-size="15" font-weight="700" fill="#1E44B8" text-anchor="middle">{ }</text>
-  <text class="display" x="84" y="838" font-size="18" font-weight="600" fill="#16223A">Prompt engineering</text>
-  <text class="mono" x="84" y="860" font-size="10.5" letter-spacing="1.5" fill="#1E44B8">CONSTRAINS THE DRAFT</text>
-  <text class="body" x="84" y="890" font-size="12.8" fill="#1E44B8">▸</text>
-  <text class="body" x="100" y="890" font-size="12.8" fill="#4B5A75">Every step must cite real code —</text>
-  <text class="mono" x="100" y="908" font-size="12" fill="#4B5A75">Class.method + file:line</text>
-  <text class="body" x="84" y="932" font-size="12.8" fill="#1E44B8">▸</text>
-  <text class="body" x="100" y="932" font-size="12.8" fill="#4B5A75">Structured, numbered output —</text>
-  <text class="body" x="100" y="950" font-size="12.8" fill="#4B5A75">vague prose is rejected</text>
-  <text class="body" x="84" y="974" font-size="12.8" fill="#1E44B8">▸</text>
-  <text class="body" x="100" y="974" font-size="12.8" fill="#4B5A75">One prepared, single-shot prompt —</text>
-  <text class="body" x="100" y="992" font-size="12.8" fill="#4B5A75">no blind retry loops</text>
-  <line x1="84" y1="1006" x2="376" y2="1006" stroke="#C9D3E2"/>
-  <text class="body" x="84" y="1026" font-size="12.5" font-weight="600" fill="#16223A">The AI can't hide a guess inside a nice story.</text>
-
-  <!-- card 2: skills -->
-  <rect x="430" y="740" width="340" height="300" rx="8" fill="#FFFFFF" stroke="#C9D3E2"/>
-  <rect x="454" y="764" width="40" height="40" rx="6" fill="#ECF0FD"/>
-  <text class="mono" x="474" y="790" font-size="15" font-weight="700" fill="#1E44B8" text-anchor="middle">::</text>
-  <text class="display" x="454" y="838" font-size="18" font-weight="600" fill="#16223A">Skills — codified workflows</text>
-  <text class="mono" x="454" y="860" font-size="10.5" letter-spacing="1.5" fill="#1E44B8">CONSTRAINS THE PROCESS</text>
-  <text class="body" x="454" y="890" font-size="12.8" fill="#1E44B8">▸</text>
-  <text class="body" x="470" y="890" font-size="12.8" fill="#4B5A75">Reusable protocols (a flow-tracer skill)</text>
-  <text class="body" x="470" y="908" font-size="12.8" fill="#4B5A75">the AI must follow every run</text>
-  <text class="body" x="454" y="932" font-size="12.8" fill="#1E44B8">▸</text>
-  <text class="body" x="470" y="932" font-size="12.8" fill="#4B5A75">Each step tagged VERIFIED or</text>
-  <text class="body" x="470" y="950" font-size="12.8" fill="#4B5A75">INFERRED — no untagged claims</text>
-  <text class="body" x="454" y="974" font-size="12.8" fill="#1E44B8">▸</text>
-  <text class="body" x="470" y="974" font-size="12.8" fill="#4B5A75">The workflow itself is the guardrail,</text>
-  <text class="body" x="470" y="992" font-size="12.8" fill="#4B5A75">not my memory</text>
-  <line x1="454" y1="1006" x2="746" y2="1006" stroke="#C9D3E2"/>
-  <text class="body" x="454" y="1026" font-size="12.5" font-weight="600" fill="#16223A">Same rigor every time — not just when I remember.</text>
-
-  <!-- card 3: documentation -->
-  <rect x="800" y="740" width="340" height="300" rx="8" fill="#FFFFFF" stroke="#C9D3E2"/>
-  <rect x="824" y="764" width="40" height="40" rx="6" fill="#ECF0FD"/>
-  <text class="mono" x="844" y="790" font-size="15" font-weight="700" fill="#1E44B8" text-anchor="middle">≡</text>
-  <text class="display" x="824" y="838" font-size="18" font-weight="600" fill="#16223A">Documentation</text>
-  <text class="mono" x="824" y="860" font-size="10.5" letter-spacing="1.5" fill="#1E44B8">GROUNDS FUTURE ANSWERS</text>
-  <text class="body" x="824" y="890" font-size="12.8" fill="#1E44B8">▸</text>
-  <text class="body" x="840" y="890" font-size="12.8" fill="#4B5A75">Every verified trace becomes a</text>
-  <text class="body" x="840" y="908" font-size="12.8" fill="#4B5A75">permanent note</text>
-  <text class="body" x="824" y="932" font-size="12.8" fill="#1E44B8">▸</text>
-  <text class="body" x="840" y="932" font-size="12.8" fill="#4B5A75">Notes build into a context pack</text>
-  <text class="body" x="840" y="950" font-size="12.8" fill="#4B5A75">about our system</text>
-  <text class="body" x="824" y="974" font-size="12.8" fill="#1E44B8">▸</text>
-  <text class="body" x="840" y="974" font-size="12.8" fill="#4B5A75">AI answers from my checked facts —</text>
-  <text class="body" x="840" y="992" font-size="12.8" fill="#4B5A75">not its imagination</text>
-  <line x1="824" y1="1006" x2="1116" y2="1006" stroke="#C9D3E2"/>
-  <text class="body" x="824" y="1026" font-size="12.5" font-weight="600" fill="#16223A">Hallucination risk shrinks with every task.</text>
-
-  <!-- ================= HOW EVERY CLAIM GETS CHECKED ================= -->
-  <text class="mono" x="60" y="1088" font-size="12" letter-spacing="2.5" fill="#4B5A75">HOW EVERY CLAIM GETS CHECKED</text>
-  <line x1="348" y1="1084" x2="1140" y2="1084" stroke="#C9D3E2" stroke-width="1"/>
-
-  <rect x="60" y="1112" width="528" height="108" rx="8" fill="#E9F3EF" stroke="#1E8A5A"/>
-  <text class="mono" x="84" y="1142" font-size="12.5" font-weight="700" letter-spacing="1.5" fill="#1E8A5A">✔ VERIFIED</text>
-  <text class="body" x="84" y="1168" font-size="13" fill="#4B5A75">I opened the cited code myself and confirmed the step is real.</text>
-  <text class="body" x="84" y="1188" font-size="13" fill="#4B5A75">~30 seconds per step — and the answer becomes mine.</text>
-
-  <rect x="612" y="1112" width="528" height="108" rx="8" fill="#F6EDE1" stroke="#B26A05"/>
-  <text class="mono" x="636" y="1142" font-size="12.5" font-weight="700" letter-spacing="1.5" fill="#B26A05">△ INFERRED</text>
-  <text class="body" x="636" y="1168" font-size="13" fill="#4B5A75">The AI guessed. Clearly flagged, never acted on until checked.</text>
-  <text class="body" x="636" y="1188" font-size="13" fill="#4B5A75">A labeled guess is useful; a hidden guess is a hallucination.</text>
-
-  <rect x="60" y="1240" width="1080" height="56" rx="8" fill="#FFFFFF" stroke="#C9D3E2"/>
-  <text class="body" x="84" y="1274" font-size="13.5" fill="#16223A"><tspan font-weight="700">Plus one runtime spot-check per trace:</tspan><tspan fill="#4B5A75">&#160;a breakpoint or log line on the least-trusted step — where static AI reading is wrong most often.</tspan></text>
-
-  <!-- ================= THESIS ================= -->
-  <rect x="60" y="1328" width="1080" height="112" rx="10" fill="#16223A"/>
-  <text class="display" x="96" y="1378" font-size="28" font-weight="700" fill="#EDF1F7">AI drafts. <tspan fill="#8FADFF">Skills constrain.</tspan> Documentation grounds.</text>
-  <text class="body" x="96" y="1408" font-size="14.5" fill="#EDF1F7" opacity="0.72">Every answer is either cited and verified — or clearly flagged as a guess. That's how a frustrating task becomes a fast one.</text>
-
-  <!-- footer -->
-  <text class="mono" x="600" y="1488" font-size="11" letter-spacing="1.5" fill="#4B5A75" text-anchor="middle">MUSE · AGENTIC AI WORKFLOW — PROMPT ENGINEERING × SKILLS × DOCUMENTATION</text>
+  <text class="body" x="800" y="800" font-size="12" letter-spacing="3" fill="#B2B2B2" text-anchor="middle">AGENTIC AI · WORKING PRACTICES</text>
 </svg>

@@ -1,7 +1,6 @@
 ---
 name: standup-reporter
 description: 'Turn impl-logs and briefs into crisp progress updates: daily standup lines, Friday wins summaries, and blockers phrased as options with a recommendation. Use for daily updates, weekly summaries, or before a 1:1 with the boss.'
-allowed-tools: Read, Grep, Glob, AskUserQuestion
 ---
 
 # Standup Reporter
@@ -23,12 +22,15 @@ This skill converts the paper trail (impl logs in `.agent/design-logs/`,
 - Composing clarifying questions for a new task → `feature-brief` Step 5.
 - Escalating a blocker in real time → `stuck-protocol` (this skill reports blockers;
   that one resolves them).
+- Showing working software live (demo, sprint review, HLD walkthrough) → `demo-prep`
+  — this skill writes the update; that one rehearses the room.
 
 ## Required inputs
 
 - The window: daily (since yesterday) or weekly (last 7 days) — if ambiguous, ask via
   interactive multi-choice (`AskUserQuestion` / Cascade suggested responses), one message.
-- Impl logs (`.agent/design-logs/*` with `**Type:** IMPL` — skim Description headers
+- Impl logs (`.agent/design-logs/*/` with `**Type:** IMPL` — feature INDEX.md files
+  first, then skim Description headers
   first, read bodies only for window hits) and `.agent/briefs/*` modified in the window;
   if unavailable in this environment, ask for a 3-line dump of what happened and build
   from that.

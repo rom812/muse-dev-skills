@@ -1,0 +1,16 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-sprint-demo",
+  "skill": "demo-prep",
+  "query": "I'm showing Danny the link-down handling tomorrow morning, 15 minutes, live on my machine",
+  "files": [],
+  "expected_behavior": [
+    "Insists the demo is rehearsed end to end on the presenting machine and identifies the step most likely to fail live",
+    "Produces a one-sentence scope statement to deliver before the first click, naming what is deliberately out of scope",
+    "Predicts five likely 'can you also...' asks, each assigned to exactly one bucket (already handled / small with a named size and date / actually a new task)",
+    "Lists two or three known gaps to disclose proactively",
+    "Runs corrections-ledger check against the diff",
+    "Saves the demo card to .agent/briefs/NNN-<task>-demo.md"
+  ],
+  "should_NOT_trigger": false
+}

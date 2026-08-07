@@ -1,0 +1,13 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-status-update",
+  "skill": "demo-prep",
+  "query": "can you write my standup for this morning, I finished the link-down handler yesterday",
+  "files": [],
+  "expected_behavior": [
+    "Does NOT build a demo card or predicted-asks list — nothing is being shown live",
+    "Routes to standup-reporter for the written update",
+    "Does not run the demo rehearsal gate"
+  ],
+  "should_NOT_trigger": true
+}

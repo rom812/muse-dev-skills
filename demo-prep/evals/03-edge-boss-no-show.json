@@ -1,0 +1,14 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "edge-boss-no-show",
+  "skill": "demo-prep",
+  "query": "I prepped the whole demo and Danny didn't join the call again",
+  "files": [],
+  "expected_behavior": [
+    "Treats the prep as not wasted rather than discarding it",
+    "Recommends recording the demo and sending it with the scope statement in the message body",
+    "Asks for the same decisions in writing with a stated default and a deadline",
+    "Keeps the demo card and its predicted-asks list for the next attempt rather than rewriting it"
+  ],
+  "should_NOT_trigger": false
+}

@@ -76,8 +76,14 @@ The note doesn't need to be complete — mark gaps `⚠ verify` and move on.
 
 ## 3. /impl-log — the 2-minute habit that carries everything else 🏢
 
-**Fire when:** three moments — task starts (create), AI generates (row), something
-breaks or ships (row / close).
+**Fire when:** four moments — any implementation prompt lands (context recall: scan
+the global INDEX → feature INDEX Snapshot → keyword grep, cite what you followed),
+task starts (create), AI generates (row), something breaks or ships (row / close).
+
+**Where logs live:** `.agent/design-logs/<feature>/NNN-task.md` — one directory per
+feature with its own INDEX.md (Snapshot = the agent's briefing), plus a global
+INDEX.md over everything. Paste `impl-log/assets/agents-md-snippet.md` into the work
+repo's AGENTS.md once, and every agent (Devin included) checks the logs before coding.
 
 **The craft:**
 - Fill "Verified by" **immediately** after each generation, while you still remember
@@ -86,7 +92,7 @@ breaks or ships (row / close).
   during /verify. Before walking into any review with my boss, read your own decision
   table once. That's the entire preparation.
 - Fix-cycle rows: the "wrong assumption" column is the only one that matters. After a
-  month, `grep -h "assumption" .agent/design-logs/*` — the repeats are your personal checklist.
+  month, `grep -rh "assumption" .agent/design-logs/` — the repeats are your personal checklist.
 - Friday: the logs feed /standup weekly automatically. Zero extra work.
 
 **Common mistake:** writing essays. If a log entry takes >2 minutes you'll quit the
@@ -298,6 +304,75 @@ fresh trace.
 confidence markers — the ⚠ steps are exactly where Spring's magic makes plausible
 guesses wrong.
 
+## 14. /precedent-check (/precedent) — the 30-second check that stops the worst-looking bug 🏢
+
+**Fire when:** you are about to write anything with a generic name — converter, mapper,
+formatter, validator, util, helper, factory, resolver. Also fire it on a `[GEN]` plan
+step that produces shared code.
+
+**The craft:**
+- It runs as a **read-only subagent on the cheap model**, so the cost is close to zero
+  and the output never clutters your main session. There is no budget reason to skip it.
+- Four angles, all of them: by **name** (the noun + every suffix the codebase uses), by
+  **type signature** (ignore names entirely — the method doing your job may be private
+  on an unrelated class), by **call site** (find somewhere the same thing is already
+  displayed or emitted, and read how), by **test** (tests describe intent in plain words).
+- Angle 1 finds the obvious duplicate. Angle 3 finds the one with the better pattern.
+  Stopping at the first hit is how you reuse the deprecated one.
+- A **NONE** verdict must still name the closest analogous implementation to imitate.
+  "Nothing exists" is only half an answer; "nothing exists, copy the shape of X" is the
+  whole one.
+
+**Common mistake:** searching for the class name you already decided on. It finds
+nothing and proves nothing. Search the noun and the signature.
+
+## 15. /corrections-ledger (/ledger) — never be told the same thing twice 🏢 + 🏠
+
+**Fire when:** anyone corrects you — PR comment, demo remark, Teams message — and
+again as `check` before every PR and demo.
+
+**The craft:**
+- Five fields, ninety seconds: date + who · what I did · **what they said, quoted** ·
+  the rule · applies-when. Quote them; your paraphrase loses the part that mattered.
+- **The rule field is the only one with future value.** It has to generalise or it never
+  fires again. "Use `EntityStatusConverter`" is worthless; "grep for an existing
+  `*Converter`/`*Mapper` before writing a conversion" fires forever.
+- A rule that fires **twice** stops being a note and becomes enforcement — promote it
+  into `.windsurf/rules/ai-discipline.md`. That is the whole escalation design: you
+  should not have to remember; the harness should.
+- `check` before every PR reports hits only, or says "no ledger hits" out loud so the
+  check is visibly real rather than quietly skipped.
+- This also replaces agent memory. Devin Local does not persist memories between
+  sessions — a file in the repo is now the only thing that survives.
+
+**Common mistake:** writing rules that are really self-criticism ("be more careful").
+If you can't name the trigger condition, you don't have a rule yet.
+
+## 16. /demo-prep (/demo) — for a boss who specifies requirements at the demo 🏢
+
+**Fire when:** any demo, sprint review, HLD review, or first showing of a task.
+
+**The craft:**
+- If new requirements always arrive at the demo, the demo **is** a requirements meeting.
+  Prepare for that meeting instead of resenting it.
+- **Rehearse for real**, on the presenting machine, and note the step most likely to
+  fail live. An unprepared demo undoes weeks of good work in four minutes.
+- **The scope statement is the actual lever**, and it only works said *first*: "Today
+  covers X. Y and Z are deliberately out of scope for this pass." Now every later "can
+  you also…" lands as a new request rather than a hole in your work.
+- Predict five asks; give each a bucket — **already handled** (show it), **small**
+  (a named size and a named date), or **actually a new task** (offer to write the brief).
+  Never agree without a bucket; unsized agreement is how two days becomes three weeks
+  with no record of why.
+- **Disclose your gaps before they're found.** Naming your own weak spots reads as
+  judgment; having them found for you reads as inattention.
+- Afterwards, capture every new ask with a date. "Six requirements were added on the
+  9th, 16th and 24th" is a fact, not a complaint — and it is the difference between
+  looking slow and looking like you absorbed a moving target.
+
+**Common mistake:** demoing more than the scope statement claims. Extra surface on
+screen invites extra asks.
+
 ## Situation → skill cheat sheet
 
 | Situation | Run | Where |
@@ -309,8 +384,11 @@ guesses wrong.
 | About to spend credits | /token-sniper prep (or Copilot handoff prompt #5) | 🪟/🏠 → 🏢 |
 | Starting a Copilot session | context-pack.sh + session opener | 🪟 |
 | Need a plan / design options / diff review | copilot-bridge prompts #2/#4 | 🪟 |
+| About to write a converter/util/helper | /precedent | 🏢 |
 | AI just generated code | /log (row) | 🏢 |
-| About to commit/push | /verify | 🏢 |
+| About to commit/push | /verify + /ledger check | 🏢 |
+| Anyone corrected me | /ledger add (same day) | 🏢 + 🏠 |
+| Demo / review / walkthrough coming | /demo | 🏢 |
 | Lost / spinning / avoiding | /stuck | 🏢 + 🏠 |
 | Bot ignores a tool, streaming/UI bugs | mentor pitfall tables | 🏢 + 🏠 |
 | "Where does X live?" across the 5 repos | /map | 🏢 |
@@ -318,7 +396,7 @@ guesses wrong.
 | Morning / Friday / before 1:1 | /standup | 🏢 |
 | Review in an hour | read your decision table | 🏢 |
 
-## Adoption plan — do NOT start all eight at once
+## Adoption plan — do NOT start all of them at once
 
 Habits stack; grabbing all of them in week one guarantees dropping all of them by week two.
 
@@ -327,6 +405,10 @@ Habits stack; grabbing all of them in week one guarantees dropping all of them b
 - **Week 3:** add /stuck (timer!) and one /tutor note per day from the parking lot.
 - **Week 4:** add /standup daily + Friday weekly. Review the month: fix-cycle count,
   credit spend, question trend. That review IS your evidence the system works.
+- **Week 5:** add /ledger — every correction the same day, `check` before every PR.
+  It is the cheapest habit here and the one seniors notice fastest.
+- **Week 6:** add /demo before every showing, and let /precedent fire on its own
+  (it is model-triggered, so mostly it just happens).
 
 By week 5 the loop runs itself — each skill's output feeds the next one's input, which
 is the real reason it holds: the brief writes your prompts, the prompts fill the log,

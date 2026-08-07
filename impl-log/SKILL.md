@@ -28,6 +28,14 @@ and prompt fuel for standups.
     └── NNN-<kebab-task>.md      # the logs themselves
 ```
 
+- **ONE log home per workspace.** `.agent/design-logs/` lives at the root of exactly
+  one repo — the primary product repo (for the Muse workspace: the chatbot
+  microservice). Never at the workspace root, never in a second repo. To resolve the
+  home in a multi-repo workspace: find existing `.agent/design-logs/` across the
+  repos — exactly one → that is home, wherever the task's code lives; none → create
+  it in the primary repo (confirm which, once); two or more → STOP, flag the
+  fragmentation and merge before logging. Cross-repo tasks still log in the home
+  repo, naming the other repo in the Description and Keywords.
 - **Every log lives inside a feature directory.** Never write a log loose in
   `design-logs/` root. One directory per product feature, kebab-case English slug.
 - **Reuse before create:** `ls .agent/design-logs/` first; if a directory for the
@@ -175,10 +183,16 @@ the decisions being followed; surface any `⚠ magic` entries still needing
   folder exists") so it stays harmless for teammates without logs.
 - Don't fragment features: `voice-chat/` and `voice-chatbot/` side by side means
   recall misses half the history. `ls` first, reuse aggressively.
+- Don't fragment repos either: a stray `.agent/design-logs/` in a sibling repo or at
+  the workspace root splits the history invisibly — the log-home rule above is a
+  hard gate, and a periodic `find <workspace> -name design-logs -maxdepth 3` catches
+  strays.
 - Snapshot ≠ diary: keep it 3-8 lines of *current* truth, rewrite it, don't append.
 
 ## Evaluation checklist
 
+- [ ] Log written in the workspace's single log-home repo (not the workspace root,
+      not a sibling repo)?
 - [ ] Context recall ran before implementation — indexes scanned, keywords grepped,
       consulted logs cited in Related logs (or "no relevant logs" stated)?
 - [ ] Log created inside the correct feature directory with the next global NNN,

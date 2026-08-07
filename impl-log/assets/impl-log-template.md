@@ -1,10 +1,10 @@
 # Log NNN: [Task name]
-**Type:** IMPL   **Status:** [IN PROGRESS]   **Started:** YYYY-MM-DD
-**Brief:** [.agent/briefs/NNN-….md]   **Related logs:** [DL-NNN / log NNN, or "None"]
+**Type:** IMPL   **Feature:** [feature-slug]   **Status:** [IN PROGRESS]   **Started:** YYYY-MM-DD
+**Brief:** [.agent/briefs/NNN-….md]   **Related logs:** [logs consulted during context recall + why, or "None found"]
 
 ## Description
 [2-4 self-contained lines: what this task is, which services/classes/endpoints it
-touches, and the outcome once shipped. A future session reads ONLY this section to
+touches, and the outcome once shipped. A future session reads ONLY this header to
 decide if the log is relevant — write it for that reader.]
 **Keywords:** [grep bait — feature name, class names, endpoints, error strings]
 
@@ -16,7 +16,7 @@ decide if the log is relevant — write it for that reader.]
 ## Decision record (my answers for "why did you implement it like that?")
 | Choice made | Alternative(s) considered | Why this one |
 |-------------|--------------------------|--------------|
-| [e.g. used @Async job instead of sync call] | [sync in request thread] | [LLM call takes seconds; precedent in XJob.java] |
+| [e.g. used @Async job instead of sync call] | [sync in request thread] | [LLM call takes seconds; precedent in log 014 / XJob.java] |
 
 ## Fix cycles
 | # | What broke | Root cause | Wrong assumption I made |
@@ -26,6 +26,7 @@ decide if the log is relevant — write it for that reader.]
 ## Shipped
 - **Date:** YYYY-MM-DD   **Acceptance criteria:** [all checked in brief? y/n]
 - **How I proved it works:** […]
+- **Feature Snapshot refreshed:** [y — see ../INDEX.md]
 
 ## What I learned
 [One honest paragraph — technical + process]

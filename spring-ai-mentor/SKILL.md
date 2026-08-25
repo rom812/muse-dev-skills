@@ -1,7 +1,6 @@
 ---
 name: spring-ai-mentor
 description: 'Reference knowledge and patterns for Spring AI development (ChatClient, tool calling, advisors, chat memory, structured output, RAG) plus common pitfalls in AI chatbot backends. Use when designing, implementing, or debugging Spring AI features.'
-allowed-tools: Read, Grep, Glob, WebSearch, WebFetch, mcp__tavily__tavily_search, mcp__exa__exa_search
 ---
 
 # Spring AI Mentor

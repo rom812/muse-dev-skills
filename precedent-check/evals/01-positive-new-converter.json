@@ -1,0 +1,15 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-new-converter",
+  "skill": "precedent-check",
+  "query": "I need a small helper that turns the EntityStatus enum into the label we show in the topology table — going to add StatusLabelMapper",
+  "files": [],
+  "expected_behavior": [
+    "Runs all four angles (by name, by type signature, by call site, by test) and says which ran",
+    "Searches the concept noun and the signature, NOT the proposed class name StatusLabelMapper",
+    "Returns exactly one verdict of EXISTS / PARTIAL / NONE with path:line evidence",
+    "On EXISTS, blocks generation and gives the one-line call to make instead",
+    "Stays under 200 words and does not dump file contents"
+  ],
+  "should_NOT_trigger": false
+}

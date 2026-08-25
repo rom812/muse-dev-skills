@@ -1,0 +1,16 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "edge-contract-does-not-cover",
+  "skill": "architecture-contract",
+  "query": "/arch check — adding a new TokenBudgetTracker, and nothing in the contract mentions cross-cutting metrics at all",
+  "files": [],
+  "expected_behavior": [
+    "Returns UNCOVERED rather than guessing a layer or inventing a clause",
+    "Treats UNCOVERED as a real verdict, not a failure or an apology",
+    "Writes the gap into Open questions phrased as a best-guess question, per stuck-protocol",
+    "Offers the two acceptable exits: ask the architect, or proceed with the assumption stated in the impl-log decision table",
+    "Does not silently promote a derived guess into a confirmed clause",
+    "Does not propose an ArchUnit rule for an unconfirmed clause"
+  ],
+  "should_NOT_trigger": false
+}

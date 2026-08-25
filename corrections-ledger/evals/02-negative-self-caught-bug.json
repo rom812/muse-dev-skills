@@ -1,0 +1,13 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-self-caught-bug",
+  "skill": "corrections-ledger",
+  "query": "I found a null check I'd missed in the chat handler and fixed it before anyone saw it",
+  "files": [],
+  "expected_behavior": [
+    "Does NOT write a ledger entry — nobody corrected the user",
+    "Routes to impl-log as a fix cycle (what broke / root cause / which assumption was wrong)",
+    "Explains the boundary: the ledger records what you were told, the log records what you found"
+  ],
+  "should_NOT_trigger": true
+}

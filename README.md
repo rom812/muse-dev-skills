@@ -11,6 +11,8 @@ The system attacks six problems at once:
 4. **"Nobody sees my progress"** → `impl-log` + `standup-reporter` turn work into visible evidence.
 5. **"I rebuilt something that already existed"** → `precedent-check` sweeps before you write, and
    `corrections-ledger` makes sure no correction has to be given twice.
+   **"…or I put it somewhere that broke the intended design"** → `architecture-contract` makes the
+   architecture explicit and checkable, so placement stops depending on knowledge you don't have yet.
 6. **"New requirements only appear at the demo"** → `demo-prep` predicts them, states scope first,
    and captures every late ask with a date.
 
@@ -33,6 +35,7 @@ The system attacks six problems at once:
 | **[code-cartographer](code-cartographer/)** | Living maps of a multi-repo system: CODEMAP per repo + cross-repo SYSTEM-MAP with anchored edges. Incremental, free-recon-first, one area per session. | "Where does X live?" across repos |
 | **[flow-tracer](flow-tracer/)** | Trace one runtime flow into a verified call-chain note: real Class.method steps, data shapes, async/repo boundaries — verified vs ⚠ inferred markers, never trace the same flow twice. | "What happens when X?" moments |
 | **[precedent-check](precedent-check/)** | Four-angle sweep (name, type signature, call site, test) for an existing util/converter/helper before you write a new one. Runs as a cheap read-only subagent. **No new generic-suffix class without a verdict.** | Before writing any shared code |
+| **[architecture-contract](architecture-contract/)** | The other half of precedent-check: stops code that is new, correct, and in the wrong place. Extracts layers, dependency directions and canonical flows into one reviewable contract, then verdicts every new file FITS / VIOLATES / **UNCOVERED**. Promotes confirmed clauses into frozen ArchUnit tests. | Before generating any new file |
 | **[corrections-ledger](corrections-ledger/)** | Every correction into one durable file, generalised into a rule that fires again; consulted before every PR and demo. Repeat corrections get escalated into hard rules. | The moment anyone corrects you |
 | **[demo-prep](demo-prep/)** | For a boss who specifies requirements at the demo: rehearsed path, scope statement said first, five predicted "can you also…" asks with bucketed answers, gaps disclosed up front, new asks captured with dates. | Before any demo or review |
 
@@ -77,7 +80,7 @@ Installs the **same skill files** as Claude Code, plus rules and slash-command s
 ./install.sh windsurf-global
 ```
 
-Then invoke with `/brainstorm`, `/brief`, `/plan`, `/precedent`, `/verify`, `/log`,
+Then invoke with `/brainstorm`, `/brief`, `/plan`, `/precedent`, `/arch`, `/verify`, `/log`,
 `/trace`, `/map`, `/tutor`, `/stuck`, `/standup`, `/ledger`, `/demo`, `/sniper`,
 `/bridge`. (`spring-ai-mentor` and `vaadin-mentor` have no slash command by design —
 they load automatically via the `model_decision` rules in `.windsurf/rules/`.)

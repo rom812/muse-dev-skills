@@ -1,10 +1,10 @@
 ---
-description: Build or extend the repo CODEMAP / cross-repo SYSTEM-MAP
+description: Build the Copilot context pack and run a session with the chat-only strong model
 ---
 
-Run the **code-cartographer** skill.
+Run the **copilot-bridge** skill.
 
-Read `.windsurf/skills/code-cartographer/SKILL.md` in full and follow it exactly — every phase, every
+Read `.windsurf/skills/copilot-bridge/SKILL.md` in full and follow it exactly — every phase, every
 gate, and its persistent output artifact. Do not improvise an alternative process and do
 not summarise the skill instead of executing it.
 

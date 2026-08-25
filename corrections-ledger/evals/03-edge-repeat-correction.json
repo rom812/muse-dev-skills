@@ -1,0 +1,14 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "edge-repeat-correction",
+  "skill": "corrections-ledger",
+  "query": "add this one: Danny said again that UI updates from the async AI callback need ui.access — he told me the same thing three weeks ago",
+  "files": [],
+  "expected_behavior": [
+    "Repeat check finds the semantic match in the existing rules and marks the entry as a REPEAT",
+    "Escalates instead of just logging: promotes the rule into .windsurf/rules/ai-discipline.md or the vaadin pattern reference so it is enforced rather than remembered",
+    "Treats the REPEAT as blocking the 'I'm done' claim until the promotion is written",
+    "Does not delete or rewrite the original entry"
+  ],
+  "should_NOT_trigger": false
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-new-file-placement",
+  "skill": "architecture-contract",
+  "query": "the AI wants to add RetryAdvisor.java under service/ to add retry around the model call — is that where it goes?",
+  "files": [],
+  "expected_behavior": [
+    "Checks the change against the contract rather than reasoning about retry design in the abstract",
+    "Returns exactly one verdict of FITS / VIOLATES / UNCOVERED with a clause reference",
+    "On VIOLATES, names the correct location and the smallest move that fixes it",
+    "States how many clauses are confirmed vs derived, so the verdict's strength is visible",
+    "Blocks generation of the new file until a verdict exists",
+    "Stays under 250 words and does not dump the contract back"
+  ],
+  "should_NOT_trigger": false
+}

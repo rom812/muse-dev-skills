@@ -326,7 +326,43 @@ step that produces shared code.
 **Common mistake:** searching for the class name you already decided on. It finds
 nothing and proves nothing. Search the noun and the signature.
 
-## 15. /corrections-ledger (/ledger) — never be told the same thing twice 🏢 + 🏠
+## 15. /architecture-contract (/arch) — for code that is new, correct, and in the wrong place 🏢
+
+**Fire when:** the AI is about to create a **new file**, or the honest answer to "which file
+does this go in?" is a guess. Run `map` once per area first; after that `check` is seconds.
+
+**The craft:**
+- This is precedent-check's twin. That one stops a second copy of something we have; this
+  one stops the failure you cannot catch — code that compiles, passes, looks finished, and
+  quietly breaks the design your boss built. A bug announces itself; wrong placement does
+  not, and it reads to a reviewer as "did not understand the architecture" rather than
+  "made a mistake."
+- **Stop treating the architecture as something you know, and make the repo state it.** A
+  two-page contract is reviewable by your boss in one pass. That is the cheap ask: correcting
+  nine wrong lines takes him ten minutes, explaining the system from scratch takes an hour —
+  which is why the second request never actually gets granted.
+- Five map angles, and **angle 3 is the one you must not skip.** The package tree shows where
+  code *ended up*, including every past violation. Tracing the oldest, most-tested feature
+  end to end (via `/trace`) shows where code was *meant* to go. That angle is what captures
+  "the flow my boss built that things are supposed to go through."
+- Every clause is marked **✅ confirmed** (a human said so, or a test enforces it) or
+  **⚠ derived** (you inferred it). Deriving rules from the same code the AI is about to
+  modify is how a drift quietly becomes a standard — so a check run against a mostly-derived
+  contract has to say so instead of sounding authoritative.
+- **UNCOVERED is the verdict that does the work you can't.** It is not a failure. It converts
+  "I didn't know the AI was wrong" into "the contract doesn't cover this yet" — a known
+  unknown you can hand to someone, instead of a silent guess that surfaces in review.
+- Clauses graduate the same way ledger rules do: enforced twice → make it a test.
+  `/arch enforce` writes **frozen** ArchUnit rules, so only *new* violations fail the build
+  and you never have to clean up inherited debt to start protecting against your own. Freeze
+  matters socially as much as technically — hundreds of red tests on your first architecture
+  PR reads as the new guy criticising the team's work.
+
+**Common mistake:** letting a plausible unconfirmed contract stand. It launders your
+assumptions into something that looks authoritative, and then you defend your own guess in
+review believing it was the design. Keep the ⚠ markers visible until a human clears them.
+
+## 16. /corrections-ledger (/ledger) — never be told the same thing twice 🏢 + 🏠
 
 **Fire when:** anyone corrects you — PR comment, demo remark, Teams message — and
 again as `check` before every PR and demo.
@@ -348,7 +384,7 @@ again as `check` before every PR and demo.
 **Common mistake:** writing rules that are really self-criticism ("be more careful").
 If you can't name the trigger condition, you don't have a rule yet.
 
-## 16. /demo-prep (/demo) — for a boss who specifies requirements at the demo 🏢
+## 17. /demo-prep (/demo) — for a boss who specifies requirements at the demo 🏢
 
 **Fire when:** any demo, sprint review, HLD review, or first showing of a task.
 
@@ -385,6 +421,8 @@ screen invites extra asks.
 | Starting a Copilot session | context-pack.sh + session opener | 🪟 |
 | Need a plan / design options / diff review | copilot-bridge prompts #2/#4 | 🪟 |
 | About to write a converter/util/helper | /precedent | 🏢 |
+| About to create a NEW FILE / "where does this go?" | /arch check | 🏢 |
+| Entering an area whose layers + flows I can't draw | /arch map | 🏢 |
 | AI just generated code | /log (row) | 🏢 |
 | About to commit/push | /verify + /ledger check | 🏢 |
 | Anyone corrected me | /ledger add (same day) | 🏢 + 🏠 |
@@ -409,6 +447,11 @@ Habits stack; grabbing all of them in week one guarantees dropping all of them b
   It is the cheapest habit here and the one seniors notice fastest.
 - **Week 6:** add /demo before every showing, and let /precedent fire on its own
   (it is model-triggered, so mostly it just happens).
+- **Week 7:** add /arch check before every new file. Do the `/arch map` half **out of
+  band, earlier** — it is a one-time investment per area, not a daily habit, and the
+  contract it produces is what makes weeks 1-6 land in the right files. Ideal timing is
+  the week you get an area you don't know, so the review request arrives with the task
+  rather than out of nowhere.
 
 By week 5 the loop runs itself — each skill's output feeds the next one's input, which
 is the real reason it holds: the brief writes your prompts, the prompts fill the log,

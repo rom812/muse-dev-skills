@@ -1,7 +1,6 @@
 ---
 name: vaadin-mentor
 description: 'Reference knowledge and patterns for Vaadin Flow UIs, especially AI-chatbot integration: background-thread UI updates (UI.access/@Push), session/UI scopes, JS integration for audio/STT/TTS, streaming responses into components. Use when designing, implementing, or debugging Vaadin UI code.'
-allowed-tools: Read, Grep, Glob, WebSearch, WebFetch, mcp__tavily__tavily_search, mcp__exa__exa_search
 ---
 
 # Vaadin Mentor

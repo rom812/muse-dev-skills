@@ -1,10 +1,10 @@
 ---
-description: Build or extend the repo CODEMAP / cross-repo SYSTEM-MAP
+description: Record a correction so it never happens twice; consult before PRs/demos
 ---
 
-Run the **code-cartographer** skill.
+Run the **corrections-ledger** skill.
 
-Read `.windsurf/skills/code-cartographer/SKILL.md` in full and follow it exactly — every phase, every
+Read `.windsurf/skills/corrections-ledger/SKILL.md` in full and follow it exactly — every phase, every
 gate, and its persistent output artifact. Do not improvise an alternative process and do
 not summarise the skill instead of executing it.
 

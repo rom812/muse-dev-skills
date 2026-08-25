@@ -1,0 +1,15 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "positive-pr-correction",
+  "skill": "corrections-ledger",
+  "query": "Danny left a comment on my PR: 'we already have EntityStatusConverter for this, please don't add a second one'",
+  "files": [],
+  "expected_behavior": [
+    "Runs add mode and captures all five fields (date + who, what I did, what they said, the rule, applies when)",
+    "Quotes their actual words rather than paraphrasing",
+    "Writes a rule that generalises past this incident — e.g. grep for an existing *Converter/*Mapper/*Formatter before any type-to-display conversion — not 'use EntityStatusConverter'",
+    "Runs the repeat check against existing rules before writing",
+    "Appends to .agent/knowledge/corrections.md newest-first and confirms in about two lines"
+  ],
+  "should_NOT_trigger": false
+}

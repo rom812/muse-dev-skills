@@ -1,7 +1,6 @@
 ---
 name: explain-before-merge
 description: 'Verification gate for AI-generated code before commit: explain every changed line, trace the runtime flow, hunt edge cases, and produce a PR description with a real test plan. Use before committing any AI-assisted change.'
-allowed-tools: Read, Edit, Grep, Glob, Bash, AskUserQuestion
 ---
 
 # Explain Before Merge
@@ -21,6 +20,8 @@ you can't commit it.** Plausible-looking is exactly where the subtle bugs hide.
 - Pre-implementation understanding → `feature-brief`.
 - Logging what happened → `impl-log` (this skill writes into it, but rows are its job).
 - Reviewing someone ELSE's PR — the gates assume the user authored (or AI-authored) the diff.
+- Rehearsing a live demo or walkthrough → `demo-prep` — this gate produces the PR;
+  that one prepares the room (its step 6 calls back here for the diff).
 
 ## Required inputs
 
@@ -80,6 +81,9 @@ tests; paste results into the impl-log's "Verified by".
 - If Gate 1 leaves any hunk unexplainable after simplification attempts, the change
   does not get committed.
 - If tests fail in Gate 4, stop and log the fix cycle — do not "commit and fix later".
+- Run `corrections-ledger check` against the diff before the PR goes out. A repeat of a
+  correction you were already given, found by the reviewer, costs more credibility than
+  any bug these gates catch.
 - If it never stops you, you're not running it honestly.
 
 ## Output format

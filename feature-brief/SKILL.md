@@ -1,7 +1,6 @@
 ---
 name: feature-brief
 description: 'Turn a vague task into a one-page feature brief BEFORE any coding — restate the problem, map affected services, define acceptance criteria, and generate smart clarifying questions for the boss. Use when receiving any new task, feature request, or bug assignment.'
-allowed-tools: Read, Write, Edit, Grep, Glob, AskUserQuestion, WebSearch, WebFetch, mcp__tavily__tavily_search, mcp__exa__exa_search
 ---
 
 # Feature Brief
@@ -54,8 +53,9 @@ message). Any blank = mark `UNKNOWN` → route to Step 4 (requirements gap) or
 ### Step 3 — Map the blast radius
 
 Identify with the user, or via repo/wiki search where available: services/classes
-touched · **the nearest existing precedent to imitate** (always look first — the
-nearest existing pattern is worth more than any generated code) · what could break.
+touched · **the nearest existing precedent to imitate** (always look first — run
+`precedent-check`; the nearest existing pattern is worth more than any generated
+code) · what could break.
 Check `.agent/knowledge/codemaps/` first — if the touched area is unmapped and the
 blast radius is unclear, a `code-cartographer` session on that one area pays for
 itself immediately. Then check `.agent/knowledge/traces/INDEX.md` — a saved trace of

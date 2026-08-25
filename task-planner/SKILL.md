@@ -1,7 +1,6 @@
 ---
 name: task-planner
 description: 'Decompose a READY feature brief into an ordered implementation plan where every step is sized for ONE prepared AI generation or one short manual edit — files per step, test per step, risks. Use for multi-file or multi-day tasks after the brief is answered, before any code generation.'
-allowed-tools: Read, Write, Edit, Grep, Glob, AskUserQuestion
 ---
 
 # Task Planner
@@ -45,7 +44,8 @@ do not plan around holes.
 
 ### Step 2 — Slice into one-shot steps
 Each step gets: **Files** (create/modify, exact paths) · **What** (one sentence) ·
-**Precedent** (the file/pattern this step imitates — mandatory where one exists) ·
+**Precedent** (the file/pattern this step imitates — mandatory where one exists;
+find it with `precedent-check`) ·
 **Prove it** (the test or check that shows the step worked) · **Size check** (fits one
 prepared generation or ≤30 min manual work; too big → split).
 Order steps so each leaves the build green — no step depends on three future steps

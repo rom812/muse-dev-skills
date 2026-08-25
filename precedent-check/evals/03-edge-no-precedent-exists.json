@@ -1,0 +1,14 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "edge-no-precedent-exists",
+  "skill": "precedent-check",
+  "query": "writing the first ever link-flap dampening rule for the trigger engine — pretty sure nothing like it exists yet",
+  "files": [],
+  "expected_behavior": [
+    "Still runs the four-angle sweep rather than accepting the user's assumption",
+    "Returns NONE plainly instead of inventing a weak match",
+    "Names a concrete analogous implementation to imitate for naming, layering, error handling and test shape — a NONE without a pattern is treated as incomplete",
+    "Declares any angle that was skipped rather than implying full coverage"
+  ],
+  "should_NOT_trigger": false
+}

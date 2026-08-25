@@ -1,10 +1,10 @@
 ---
-description: Build or extend the repo CODEMAP / cross-repo SYSTEM-MAP
+description: Prepare a one-shot prompt before spending AI credits — and never enter a blind fix-loop
 ---
 
-Run the **code-cartographer** skill.
+Run the **token-sniper** skill.
 
-Read `.windsurf/skills/code-cartographer/SKILL.md` in full and follow it exactly — every phase, every
+Read `.windsurf/skills/token-sniper/SKILL.md` in full and follow it exactly — every phase, every
 gate, and its persistent output artifact. Do not improvise an alternative process and do
 not summarise the skill instead of executing it.
 

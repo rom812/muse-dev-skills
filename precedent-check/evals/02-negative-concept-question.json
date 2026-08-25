@@ -1,0 +1,13 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-concept-question",
+  "skill": "precedent-check",
+  "query": "what actually is the topology service in Muse and why does it exist?",
+  "files": [],
+  "expected_behavior": [
+    "Does NOT run a precedent sweep — nothing is about to be written",
+    "Routes to domain-tutor as a concept/why question",
+    "Does not return an EXISTS / PARTIAL / NONE verdict"
+  ],
+  "should_NOT_trigger": true
+}

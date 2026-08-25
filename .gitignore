@@ -1,5 +1,7 @@
 # Work artifacts never belong in this personal repo — they live in <work-project>/.agent/
 .agent/
+# Serena MCP project config + cache — local tool state, not part of the skill set
+.serena/
 *.env
 config.env
 .DS_Store

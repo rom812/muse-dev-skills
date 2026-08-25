@@ -1,10 +1,10 @@
 ---
-description: Build or extend the repo CODEMAP / cross-repo SYSTEM-MAP
+description: Map the intended architecture, or check where new code should go before writing it
 ---
 
-Run the **code-cartographer** skill.
+Run the **architecture-contract** skill.
 
-Read `.windsurf/skills/code-cartographer/SKILL.md` in full and follow it exactly — every phase, every
+Read `.windsurf/skills/architecture-contract/SKILL.md` in full and follow it exactly — every phase, every
 gate, and its persistent output artifact. Do not improvise an alternative process and do
 not summarise the skill instead of executing it.
 

@@ -1,38 +1,12 @@
 ---
-description: Turn a new task into a one-page feature brief with smart questions — BEFORE any code
+description: Turn a new task into a one-page brief + smart questions for the boss
 ---
 
-# /brief — Feature Brief (understand before coding)
+Run the **feature-brief** skill.
 
-Hard rule: no implementation until this brief is filled.
-Vague idea with no committed approach → /brainstorm first. Multi-file/multi-day
-step scheduling comes AFTER this brief → /plan.
-Ask me everything via suggested-responses multi-choice, batched into one message per step.
+Read `.windsurf/skills/feature-brief/SKILL.md` in full and follow it exactly — every phase, every
+gate, and its persistent output artifact. Do not improvise an alternative process and do
+not summarise the skill instead of executing it.
 
-1. Ask me to paste the raw task exactly as given (Jira/chat). Record it verbatim.
-2. Make me restate it in my own words: current behavior, desired behavior, trigger
-   (user action / topology event / job / chat message). If I can't answer one, mark it
-   `UNKNOWN` — it becomes a question in step 4.
-3. Map the blast radius using the repo (and Bitbucket/wiki MCP if helpful):
-   - services/classes touched
-   - the nearest existing precedent feature to imitate
-   - what could break
-   - saved knowledge first: `.agent/knowledge/codemaps/` + `.agent/knowledge/traces/INDEX.md`
-     — if the affected flow has no trace and I can't narrate it, run /trace first
-4. Optional research sweep (skip silently for routine tasks): 1-2 Exa MCP searches
-   for best practices / similar implementations of this kind of feature; record 2-3
-   takeaways + links in the brief's Plan section.
-5. Draft 2-4 clarifying questions for my boss. Rules: never "how do I do this"; always
-   options + my leaning ("I see A or B, I lean A because…"); include one scope-boundary
-   question and one acceptance-confirmation question ("when <trigger>, system should
-   <observable result> — correct?"). Batch into ONE copy-pasteable message.
-6. Write `.agent/briefs/NNN-<kebab-name>.md` (NNN = next number) with sections:
-   Raw task / In my own words / Blast radius / Questions (+ answers) / Acceptance
-   criteria (checkboxes) / Plan (steps + test plan) / Assumptions. Status `[DRAFT]`.
-7. Run the Understanding Check with me as a multi-choice checklist — all must be YES
-   before coding:
-   - I can explain the feature without reading the ticket
-   - I know which files I'll touch
-   - I know how I'll prove it works
-   - Open questions are sent or consciously assumed (written down)
-   Any NO → stop; route to /tutor (knowledge gap) or back to questions (requirements gap).
+If that file is missing, stop and tell me the skills are not installed
+(`./install.sh windsurf <repo>` from the muse-dev-skills repo).

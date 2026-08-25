@@ -1,7 +1,6 @@
 ---
 name: domain-tutor
 description: 'Learn one unfamiliar domain concept (a service, subsystem, protocol, or domain term) and produce a permanent knowledge note in the user''s own words, with a diagram and self-quiz. Use when the user asks what a service, subsystem, or domain term IS or WHY it exists, or says they don''t understand one, in their product domain. Not for step-by-step runtime tracing — that is flow-tracer.'
-allowed-tools: Read, Write, Edit, Grep, Glob, AskUserQuestion, WebSearch, WebFetch, mcp__tavily__tavily_search, mcp__exa__exa_search
 ---
 
 # Domain Tutor

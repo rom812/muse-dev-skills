@@ -1,7 +1,6 @@
 ---
 name: code-cartographer
 description: 'Build and maintain living maps of a multi-repo system: one compact CODEMAP per repo (modules → purpose → key classes → talks-to) and one cross-repo SYSTEM-MAP (which repo talks to which, over what). Incremental — one area per session. Use when asking where something lives across repos, when a blast-radius can''t be answered, or when entering an unmapped repo or module. Not for understanding what a single service or concept is and why it exists — that is domain-tutor.'
-allowed-tools: Read, Write, Edit, Grep, Glob, Bash, AskUserQuestion, mcp__serena__get_symbols_overview, mcp__serena__find_symbol, mcp__serena__find_referencing_symbols, mcp__octocode__localViewStructure, mcp__octocode__localSearchCode
 ---
 
 # Code Cartographer

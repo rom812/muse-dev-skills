@@ -1,7 +1,6 @@
 ---
 name: stuck-protocol
 description: 'Escalation ladder for being stuck or lost: timeboxed self-attempts with a documented trail, then a well-formed question with evidence and a best guess. Also covers the question parking-lot and recurring question-slot habits. Use when feeling stuck, lost, or hesitant to ask colleagues for help.'
-allowed-tools: Read, Write, Grep, Glob, Bash, AskUserQuestion, WebSearch, WebFetch, mcp__tavily__tavily_search, mcp__exa__exa_search
 ---
 
 # Stuck Protocol

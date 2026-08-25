@@ -1,7 +1,6 @@
 ---
 name: token-sniper
 description: 'Discipline for spending a tiny monthly AI-credit budget surgically: decide if a task deserves credits, prepare a one-shot prompt offline, and never enter blind fix-loops. Use before any paid AI generation at work or when drafting prompts for a weaker model.'
-allowed-tools: Read, Write, Edit, Grep, Glob
 ---
 
 # Token Sniper
@@ -43,8 +42,8 @@ one prepared shot per step.
 
 ### Step 2 — Prepare the shot offline (costs nothing)
 Fill a template from `assets/prompt-templates.md`: **Goal** (one sentence) · **Context**
-(exact files; *the precedent to imitate* — weak models with a concrete example perform
-like strong ones) · **Constraints** (version anchors, do-not-touch, error handling) ·
+(exact files; *the precedent to imitate*, located via `precedent-check` — weak models
+with a concrete example perform like strong ones) · **Constraints** (version anchors, do-not-touch, error handling) ·
 **Expected output** (files + "explain non-obvious lines") · **Verification** ("list
 what I should test").
 Working with the older work models specifically — and defending against being misled

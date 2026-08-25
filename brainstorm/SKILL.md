@@ -1,7 +1,6 @@
 ---
 name: brainstorm
 description: 'Explore a vague idea or open problem into a validated approach through one-at-a-time multi-choice questions, 2-3 alternatives with trade-offs, and an incremental design check. Use BEFORE a task is concrete — when the user has an idea, an open-ended ask from the boss, or several possible directions and no committed approach.'
-allowed-tools: Read, Grep, Glob, Write, AskUserQuestion, WebSearch, WebFetch, mcp__tavily__tavily_search, mcp__exa__exa_search
 ---
 
 # Brainstorm

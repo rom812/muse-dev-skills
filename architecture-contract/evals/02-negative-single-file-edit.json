@@ -1,0 +1,14 @@
+{
+  "$schema": "skill-eval/v1",
+  "name": "negative-single-file-edit",
+  "skill": "architecture-contract",
+  "query": "fix the off-by-one in the token counter loop in TokenBudgetTracker.countPromptTokens",
+  "files": [],
+  "expected_behavior": [
+    "Does NOT run a contract check — no new file, no new dependency arrow, no placement question",
+    "Recognises that editing inside one existing file raises no contract question",
+    "Does not return a FITS / VIOLATES / UNCOVERED verdict",
+    "Does not propose writing or updating .agent/ARCHITECTURE.md for this change"
+  ],
+  "should_NOT_trigger": true
+}

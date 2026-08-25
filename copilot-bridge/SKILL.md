@@ -1,7 +1,7 @@
 ---
 name: copilot-bridge
 description: 'Protocol for using an unlimited chat-only strong model (e.g. work Copilot/GPT) as the planning brain for a codebase it cannot access: maintain a context pack instead of pasting raw code, stateless sessions, and structured handoff prompts to the in-repo coding agent. Use when working with a chat AI that has no repository access.'
-allowed-tools: Read, Write, Edit, Grep, Glob, Bash
+triggers: [user]
 ---
 
 # Copilot Bridge
